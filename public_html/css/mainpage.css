@@ -1,9 +1,38 @@
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+header {
+    display: flex;
+    padding: 2em 1em;
+    background-color: aquamarine;
+    height: 100px;
+}
+
+.logo-img img {
+    width: 60px;
+    height: 60px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-nav ul li {
+    text-transform: uppercase;
+    list-style: none;
+    margin-left: 5px;
+    cursor: pointer;
+    display: inline-flex;
 }
 
 .container {
@@ -22,6 +51,7 @@ main {
 
 h1 {
     width: 100%;
+    margin: 25px 10px;
 }
 
 .grid-col1 {
@@ -49,10 +79,6 @@ figure h2 {
 
 figure img {
     width: 82%;
-}
-
-figcaption {
-    text-align: center;
 }
 
 footer {
