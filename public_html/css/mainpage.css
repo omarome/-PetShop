@@ -1,13 +1,26 @@
-.footer {
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+}
 
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+footer {
+    background-color: grey;
+    display: flex;
+    align-items: flex-end;
+}
+footer .wrapper {
+    /*max-width: 1024px;*/
+    /*margin: 0 auto;*/
+    padding: 20px;
     color: white;
 
 }
