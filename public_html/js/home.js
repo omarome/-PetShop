@@ -41,6 +41,7 @@ picArray.forEach((file) => {
   const figure = document.createElement('figure');
   const price = document.createElement('div');
   price.className = 'price';
+  const h3 = document.createElement('h3');
   const img = document.createElement('img');
   const p = document.createElement('p');
   const button = document.createElement('button');
@@ -49,6 +50,7 @@ picArray.forEach((file) => {
   price.innerText= file.price;
   p.innerText = file.location;
   button.innerText = file.viewbtn;
+  h3.innerText = file.breed;
 
   img.src = file.filename;
   img.alt = file.title;
@@ -57,11 +59,12 @@ picArray.forEach((file) => {
   header.appendChild(h2);
   figure.appendChild(img);
   figure.appendChild(header);
+  figure.appendChild(h3);
   figure.appendChild(price);
-  article.appendChild(header);
-  article.appendChild(figure);
   figure.appendChild(p);
   figure.appendChild(button);
+  article.appendChild(header);
+  article.appendChild(figure);
 
   //main.appendChild(article);
   main.appendChild(gridCol1);
