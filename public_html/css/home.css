@@ -61,18 +61,40 @@ footer {
 footer .wrapper {
     /*max-width: 1024px;*/
     /*margin: 0 auto;*/
+    display: flex;
+    align-self: center;
     padding: 20px;
     color: white;
 }
+/*.wrapper :hover{*/
+/*    color: black;*/
+/*}*/
 
 .social-icons {
     list-style: none;
     display: flex;
     flex-direction: row;
 }
+.social-icons :hover{
+    color: black;
+}
 
 .social-icons li {
     font-size: 26px;
     margin: 2px 7px;
 }
-
+.fa-facebook-square{
+    color: white;
+}
+.fa-instagram{
+    color: white;
+}
+.fa-twitter-square{
+    color: white;
+}
+@media only screen and (max-width: 600px) {
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
+}
