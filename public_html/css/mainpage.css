@@ -6,6 +6,7 @@ font-family: 'Ubuntu', sans-serif;
  */
 
 * {
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,39 +14,93 @@ font-family: 'Ubuntu', sans-serif;
 }
 
 body {
+    align-content: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
+/* here start the header */
 
 header {
-    display: flex;
-    background-color: aquamarine;
+    border-style: outset;
+    background-color: #7fffd4;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 110px;
 }
+/* here start the search */
+section{
+    display: grid;
+}
+.search-container{
+margin-right: 2px;
+    float: right;
+}
+.search-container button {
 
-.wrapper {
+    margin-right: 10px;
+    background: white;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+input[type=text] {
+    padding: 6px;
+    font-size: 12px;
+    border-style: inset;
+}
+/* here  the search  ends*/
+
+/* here start the navigation bar */
+.nav {
     display: flex;
-    margin: 0 auto;
-}
+    justify-content: space-between;
 
+    padding: 0 10%;
+}
+.nav :hover{
+    color: #626161;
+
+}
+/* here start the logo and title */
+.logo-title{
+    display: inline-flex;
+    align-items: center;
+}
 .page-title {
     font-size: 20px;
+
 }
 
 .logo-img img {
-    max-width: 180px;
+    max-width: 100px;
 }
+/* here the logo and title ends */
 
-.right-header {
+/* here start the navigation left side */
+.nav-left {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+}
+/* here  the navigation left side ends */
+/* here start the navigation right side */
+.nav-right{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .main-nav li {
+    text-transform: uppercase;
+    display: inline-block;
+    list-style: none;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.header-btns li{
     text-transform: uppercase;
     display: inline-block;
     list-style: none;
@@ -61,12 +116,13 @@ header {
 }
 
 .header-btns {
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.header-btns >a {
+.header-btns >li> a {
     border-radius: 6px;
     text-decoration: none;
     font-size: 14px;
@@ -75,11 +131,49 @@ header {
     padding: 8px 17px;
     border: 1px solid black;
 }
+/* here start the dropdown menu*/
+.dropdown-content {
+    display: none;
+    border-radius: 6px;
+    position: absolute;
+    background-color: aquamarine;
+    min-width: 90px;
+    box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
+    z-index: 1;
+}
+.dropdown-content li  {
+    margin: 0;
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* here start the dropdown menu hover*/
+.dropdown-content li:hover{
+    border-radius: 6px;
+    background-color: white;
+}
+/* here the dropdown menu ends */
+
+/* here start the navigation left side */
+
+/* here start the navigation bar */
+
+/* header ends here*/
 
 .container {
+    display: flex;
+
     max-width: 1024px;
-    margin: 0 auto;
+    margin:  auto;
 }
+
 
 main {
     background-color: #fff;
@@ -87,6 +181,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
 }
 
 h1 {
@@ -97,14 +192,16 @@ h1 {
 .grid-col1 {
     display: flex;
     flex-wrap: wrap;
+
 }
 
 .grid-col2 {
-    display: flex;
-    flex: 1;
+display: inline-flex;
 }
 
 figure {
+    border-radius: 6px;
+    box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
     margin: 0 1em 2em 0;
     width: 240px;
     text-align: center;
@@ -120,14 +217,15 @@ figure h2 {
 figure img {
     width: 82%;
 }
+/* here start footer*/
 
 footer {
-    background-color: grey;
+    background-color: #808080;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-footer .wrapper {
+footer .nav {
     /*max-width: 1024px;*/
     /*margin: 0 auto;*/
     padding: 20px;
@@ -145,3 +243,4 @@ footer .wrapper {
     margin: 2px 7px;
 }
 
+/* here start footer*/

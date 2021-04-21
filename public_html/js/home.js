@@ -89,4 +89,3 @@ picArray.forEach((file) => {
   //main.appendChild(article);
   grid.appendChild(figure);
 });
-
