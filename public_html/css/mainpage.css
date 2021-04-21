@@ -9,47 +9,109 @@ font-family: 'Ubuntu', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
+    align-content: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: url("../img/bg-01.png");
+    background-repeat: no-repeat;
+    background-position: center;
 }
+/* here start the header */
 
 header {
-    display: flex;
-    background-color: aquamarine;
+    border-style: outset;
+    background-color: #7fffd4;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 110px;
 }
+/* here start the search */
+section{
+    display: grid;
+}
+.search-container{
+    margin-right: 2px;
+    float: right;
+}
+.search-container button {
+    margin-right: 10px;
+    background: white;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+input[type=text] {
+    padding: 6px;
+    font-size: 12px;
+    border-style: inset;
+    border-radius: 4px;
+}
+/* here  the search  ends*/
 
-.wrapper {
+/* here start the navigation bar */
+.nav {
     display: flex;
-    margin: 0 auto;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+.nav-left :hover{
+    color: #626161;
 }
 
+/* here start the logo and title */
+.logo-title{
+    display: inline-flex;
+    align-items: center;
+}
 .page-title {
     font-size: 20px;
 }
 
 .logo-img img {
-    max-width: 180px;
+    max-width: 100px;
 }
+/* here the logo and title ends */
 
-.right-header {
+/* here start the navigation left side */
+.nav-left {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+}
+/* here  the navigation left side ends */
+/* here start the navigation right side */
+.nav-right{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .main-nav li {
     text-transform: uppercase;
     display: inline-block;
     list-style: none;
-    margin-left: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.in-btn> a {
+    background-color: #f5f6dc;
+}
+
+.up-btn> a {
+    background-color: #a0cfd5;
+}
+
+.header-btns li{
+    text-transform: uppercase;
+    display: inline-block;
+    list-style: none;
+    margin-left: 15px;
     cursor: pointer;
 }
 
@@ -66,7 +128,7 @@ header {
     align-items: center;
 }
 
-.header-btns >a {
+.header-btns >li> a {
     border-radius: 6px;
     text-decoration: none;
     font-size: 14px;
@@ -76,9 +138,46 @@ header {
     border: 1px solid black;
 }
 
+/* here start the dropdown menu*/
+.dropdown-content {
+    display: none;
+    border-radius: 6px;
+    position: absolute;
+    background-color: aquamarine;
+    min-width: 90px;
+    box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
+    z-index: 1;
+}
+.dropdown-content li  {
+    margin: 0;
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* here start the dropdown menu hover*/
+.dropdown-content li:hover{
+    border-radius: 6px;
+    background-color: white;
+}
+/* here the dropdown menu ends */
+
+/* here start the navigation left side */
+
+/* here start the navigation bar */
+
+/* header ends here*/
+
 .container {
+    display: flex;
     max-width: 1024px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 main {
@@ -87,6 +186,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
 }
 
 h1 {
@@ -96,15 +196,24 @@ h1 {
 
 .grid-col1 {
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
 }
 
 .grid-col2 {
     display: flex;
     flex: 1;
+    max-width: 18%;
+    justify-content: center;
+}
+
+.search-container {
+    margin: 25px 0;
 }
 
 figure {
+    border-radius: 6px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
     margin: 0 1em 2em 0;
     width: 240px;
     text-align: center;
@@ -121,13 +230,68 @@ figure img {
     width: 82%;
 }
 
+/* Register page START */
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2.2em 0;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: beige;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.popup, #reg-user-form {
+    width: 620px;
+}
+
+.form-wrapper {
+    margin: 2em 1em;
+}
+
+.form-wrapper h3 {
+    margin-bottom: 25px;
+}
+
+.light-border {
+    border-radius: 8px;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.form-wrapper input {
+    display: inline-block;
+    width: 100%;
+    margin: .5em 0;
+}
+
+.fname, .lname, .mail, .adrs, .phn, .psw {
+    width: 46%;
+    display: inline-block;
+    margin: 0 10px 15px 10px;
+}
+
+.light-btn{
+    display: flex;
+    justify-content: center;
+    background-color: #afeeee;
+    color: black;
+    width: 60%;
+    margin: 0 auto;
+}
+/* Register page END */
+
+
+/* here start footer*/
+
 footer {
-    background-color: grey;
+    background-color: #808080;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-footer .wrapper {
+footer .nav {
     /*max-width: 1024px;*/
     /*margin: 0 auto;*/
     padding: 20px;
@@ -145,3 +309,125 @@ footer .wrapper {
     margin: 2px 7px;
 }
 
+.social-icons .fa-facebook-square:hover {
+    color: #1877f2;
+}
+
+.social-icons .fa-twitter-square:hover {
+    color: #1da1f2;
+}
+
+ .social-icons .fa-instagram:hover {
+     color: #c32aa3;
+ }
+
+/* here start footer*/
+
+
+/* PopUp */
+.popup {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 380px;
+    padding: 20px 30px;
+    background-color: #a0cfd5;
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+}
+
+.popup.active {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+}
+
+.pop-light-border {
+    border-radius: 8px;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.popup input {
+    display: inline-block;
+    width: 100%;
+    margin: .5em 0;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 26px;
+    height: 26px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 24px;
+    font-size: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* The PopUp (background) */
+.overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup form .form-element {
+    margin:15px 0px;
+}
+.popup form .form-element label {
+    font-size:14px;
+    color:#222;
+}
+
+.popup form #remember-me {
+    width: 5%;
+}
+
+.popup form .form-element input[type="checkbox"] {
+    margin-right:5px;
+}
+
+.popup form .form-element button {
+    width:100%;
+    height:50px;
+    border:none;
+    outline:none;
+    font-size:16px;
+    background-color: #afeeee;
+    color: black;
+    border-radius: 7px;
+    cursor:pointer;
+}
+
+.popup form .form-element a {
+    display:block;
+    text-align:right;
+    font-size:15px;
+    color: #444545;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* PopUp */
