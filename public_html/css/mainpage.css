@@ -6,8 +6,7 @@ font-family: 'Ubuntu', sans-serif;
  */
 
 * {
-
-    margin: 0;
+    margin: 1px;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif
@@ -86,10 +85,10 @@ input[type=text] {
 /* here  the navigation left side ends */
 /* here start the navigation right side */
 .nav-right{
-    padding: 15px;
+
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content:space-between;
 }
 
 .main-nav li {
@@ -218,29 +217,82 @@ figure img {
     width: 82%;
 }
 /* here start footer*/
-
 footer {
-    background-color: #808080;
+    background-color: grey;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
-footer .nav {
+footer .wrapper {
     /*max-width: 1024px;*/
     /*margin: 0 auto;*/
+    display: flex;
+    align-self: center;
     padding: 20px;
     color: white;
 }
+/*.wrapper :hover{*/
+/*    color: black;*/
+/*}*/
 
 .social-icons {
     list-style: none;
     display: flex;
     flex-direction: row;
 }
+.social-icons :hover{
+    color: black;
+}
 
 .social-icons li {
     font-size: 26px;
     margin: 2px 7px;
 }
+.fa-facebook-square{
+    color: white;
+}
+.fa-instagram{
+    color: white;
+}
+.fa-twitter-square{
+    color: white;
+}
+.text_link :hover{
+    color: black;
+}
+@media only screen and (max-width: 600px) {
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 /* here start footer*/
+@media only screen and (max-width: 600px) {
+    header{
+        height: 170px;
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-left{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-right{
+        margin: 10px -54px;
+        align-self: flex-end;
+        position: absolute;
+    }
+   section{
+       margin-left: 25%;
+   }
+   article{
+       align-items: center;
+       display: flex;
+   }
+
+}
