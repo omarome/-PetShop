@@ -92,6 +92,9 @@ footer .wrapper {
 .fa-twitter-square{
     color: white;
 }
+.text_link :hover{
+    color: black;
+}
 @media only screen and (max-width: 600px) {
     footer{
         display: flex;
