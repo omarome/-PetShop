@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300&family=Ubuntu:wght@300;400;500&display=swap');
+
+/*
+font-family: 'Nunito Sans', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif
 }
 
 body {
@@ -12,33 +20,65 @@ body {
 
 header {
     display: flex;
-    padding: 2em 1em;
     background-color: aquamarine;
+    justify-content: space-between;
+    align-items: center;
     height: 100px;
 }
 
-.logo-img img {
-    width: 60px;
-    height: 60px;
-}
-
-.main-nav {
+.wrapper {
     display: flex;
-    justify-content: flex-end;
+    margin: 0 auto;
 }
 
-.main-nav ul li {
+.page-title {
+    font-size: 20px;
+}
+
+.logo-img img {
+    max-width: 180px;
+}
+
+.right-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav li {
     text-transform: uppercase;
+    display: inline-block;
     list-style: none;
     margin-left: 5px;
     cursor: pointer;
-    display: inline-flex;
+}
+
+.main-nav li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+}
+
+.header-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-btns >a {
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+    padding: 8px 17px;
+    border: 1px solid black;
 }
 
 .container {
     max-width: 1024px;
     margin: 0 auto;
-    flex: 1;
 }
 
 main {
@@ -65,7 +105,7 @@ h1 {
 }
 
 figure {
-    margin: 0 1em 2em 1em;
+    margin: 0 1em 2em 0;
     width: 240px;
     text-align: center;
     box-sizing: border-box;
@@ -84,7 +124,8 @@ figure img {
 footer {
     background-color: grey;
     display: flex;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
 }
 footer .wrapper {
     /*max-width: 1024px;*/
