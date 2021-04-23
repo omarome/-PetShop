@@ -25,37 +25,18 @@ const picArray = [
     'viewbtn': 'View',
     'filename': 'img/pic3.png',
   },
-  {
-    'title': 'Cat',
-    'price': '1000€',
-    'breed': 'Breed',
-    'location': 'Address',
-    'viewbtn': 'View',
-    'filename': 'img/pic1.png',
-  },
-  {
-
-    'title': 'Dog',
-    'price': '800€',
-    'breed': 'Breed',
-    'location': 'Address',
-    'viewbtn': 'View',
-    'filename': 'img/pic2.png',
-  },
-  {
-    'title': 'Puppy',
-    'price': '990€',
-    'breed': 'Breed',
-    'location': 'Address',
-    'viewbtn': 'View',
-    'filename': 'img/pic3.png',
-  },
 ];
 
-const grid = document.querySelector('.grid-col1');
+const main = document.querySelector('main');
 
 picArray.forEach((file) => {
 
+  const gridCol1 = document.createElement('div');
+  gridCol1.className = 'grid-col1';
+  const gridCol2 = document.createElement('div');
+  gridCol2.className = 'grid-col2';
+  const article = document.createElement('article');
+  const header = document.createElement('header');
   const h2 = document.createElement('h2');
   const figure = document.createElement('figure');
   const price = document.createElement('div');
@@ -64,11 +45,6 @@ picArray.forEach((file) => {
   const img = document.createElement('img');
   const p = document.createElement('p');
   const button = document.createElement('button');
-
-  button.style.textTransform = 'uppercase';
-  button.style.padding = '8px 24px';
-  button.style.marginLeft = '10px';
-  button.style.marginBottom = '15px';
 
   h2.innerText = file.title;
   price.innerText= file.price;
@@ -79,14 +55,19 @@ picArray.forEach((file) => {
   img.src = file.filename;
   img.alt = file.title;
 
-  figure.appendChild(h2);
+  gridCol1.appendChild(article);
+  header.appendChild(h2);
   figure.appendChild(img);
+  figure.appendChild(header);
   figure.appendChild(h3);
   figure.appendChild(price);
   figure.appendChild(p);
   figure.appendChild(button);
+  article.appendChild(header);
+  article.appendChild(figure);
 
   //main.appendChild(article);
-  grid.appendChild(figure);
+  main.appendChild(gridCol1);
+  main.appendChild(gridCol2);
 });
 
