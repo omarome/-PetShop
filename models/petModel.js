@@ -13,7 +13,28 @@ const getAllPets = async () => {
   }
 };
 
+const getPet = async (id) => {
+  try {
+    console.log('petModel getCat', id);
+    const [rows] = await promisePool.execute('SELECT * FROM project_pet WHERE PID = ?', [id]);
+    return rows[0];
+  } catch (e) {
+    console.error('catModel:', e.message);
+  }
+};
+
+const deletePet = async (id) => {
+  try {
+    console.log('catModel delete pet', id);
+    const [rows] = await promisePool.execute('DELETE FROM project_pet WHERE PID = ?', [id]);
+    return rows.affectedRows === 1;
+  } catch (e) {
+    console.error('petModel:', e.message);
+  }
+};
 
 module.exports = {
-  getAllPets
+  getAllPets,
+  deletePet,
+  getPet
 };
