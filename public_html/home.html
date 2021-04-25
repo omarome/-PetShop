@@ -10,7 +10,7 @@
 
 <header>
     <!-- add header here -->
-    <div class="nav">
+    <nav class="nav">
         <div class="logo-title">
             <div class="page-title"><h3>PetShop</h3></div>
             <div class="logo-img"><img src="img/PetShopLogo.png"></div>
@@ -34,31 +34,25 @@
         </div>
         <div class="nav-right">
             <ul class="header-btns">
-                <li><a href="registr.html">
-                    <button class="register-btn">Sign In</button>
-                </a></li>
-                <li><a href="#">
-                    <button class="register-btn">Sign Up</button>
-                </a></li>
+                <li class="in-btn"><a href="registr.html">Sign In</a></li>
+                <li class="up-btn"><a href="#">Sign Up</a></li>
             </ul>
 
         </div>
-    </div>
+    </nav>
 
 </header>
-
 <section>
-    <article>
-        <div class="search-container">
-            <form action="/action_page.php">
-                <button type="submit"><i class="fa fa-search"></i></button>
-                <input type="text" placeholder="Search.." name="search">
-            </form>
-        </div>
-    </article>
     <article class="container">
+        <div class="grid-col2">
+            <div class="search-container">
+                <form action="/action_page.php">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <input type="text" placeholder="Search.." name="search">
+                </form>
+            </div
+            ></div>
         <div class="grid-col1"><h1>Latest Posts</h1></div>
-        <div class="grid-col2"></div>
     </article>
 </section>
 <footer>
@@ -86,7 +80,6 @@
         </ul>
     </div>
 </footer>
-
 
 <script src="js/home.js"></script>
 </body>

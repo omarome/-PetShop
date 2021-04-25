@@ -6,7 +6,7 @@ font-family: 'Ubuntu', sans-serif;
  */
 
 * {
-    margin: 1px;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif
@@ -29,11 +29,15 @@ header {
 }
 /* here start the search */
 section{
-    display: grid;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
 }
 .search-container{
-margin-right: 2px;
-    float: right;
+align-items: flex-end;
+
 }
 .search-container button {
 
@@ -55,13 +59,13 @@ input[type=text] {
     display: flex;
     justify-content: space-between;
 
-    padding: 0 10%;
 }
-.nav :hover{
-    border-color: #6dca2c;
+
+.main-nav :hover{
     color: #626161;
 
 }
+
 /* here start the logo and title */
 .logo-title{
     display: inline-flex;
@@ -91,35 +95,42 @@ input[type=text] {
     align-items: center;
     justify-content:space-between;
 }
-.register-btn{
 
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    background-color: aquamarine;
-    border: none;
-}
 
 .main-nav li {
     text-transform: uppercase;
     display: inline-block;
     list-style: none;
-    margin-left: 5px;
+    margin-left: 10px;
     cursor: pointer;
 }
+.in-btn> a {
+    background-color: #f5f6dc;
+}
+
+.up-btn> a {
+    background-color: #40e0d0;
+}
+
+
+.in-btn> a:hover {
+    background-color: aquamarine;
+}
+
+.up-btn> a:hover {
+    background-color: aquamarine;
+}
+
 
 .header-btns li{
     text-transform: uppercase;
     display: inline-block;
     list-style: none;
-    margin-left: 5px;
     cursor: pointer;
 }
 
 .main-nav li a {
-    margin: 10px;
+
     text-decoration: none;
     font-size: 16px;
     color: black;
@@ -127,14 +138,14 @@ input[type=text] {
 }
 
 .header-btns {
-
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
     align-items: center;
 }
 
 .header-btns >li> a {
-    margin: 7px;
+    justify-content: space-between;
     border-radius: 6px;
     text-decoration: none;
     font-size: 14px;
@@ -180,10 +191,12 @@ input[type=text] {
 /* header ends here*/
 
 .container {
-    display: flex;
 
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     max-width: 1024px;
-    margin:  auto;
 }
 
 
@@ -206,9 +219,9 @@ h1 {
     flex-wrap: wrap;
 
 }
-
 .grid-col2 {
-display: inline-flex;
+    /* display: flex; */
+    align-self: flex-end;
 }
 
 figure {
@@ -284,34 +297,49 @@ footer .wrapper {
     header{
         height: 170px;
         display: flex;
+        flex-wrap: wrap;
         padding: 0;
-        margin: 0;
+
+    }
+    .logo-title {
+        padding: 5px;
+        order: 1;
+        display: inline-flex;
+        align-items: center;
     }
     .nav-left{
         display: flex;
-        flex-direction: column;
+        order:2;
     }
     .nav{
+        padding: 0;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
     }
     .nav-right{
-        margin: 10px -54px;
-        align-self: flex-end;
-        position: absolute;
+        align-items: self-end;
+        justify-content: space-between;
+        order: 1;
     }
    section{
-       margin-left: 25%;
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: column;
+       align-items: center;
    }
    article{
+       flex-wrap: wrap;
+       flex-direction: column;
        align-items: center;
-       display: flex;
+
    }
    ul.main-nav{
-       margin-left: -45px;
-   }
-   .nav-left{
-       margin: 0;
-   }
 
+   }
+    .grid-col1 {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
 }
