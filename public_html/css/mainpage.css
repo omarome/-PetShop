@@ -17,6 +17,10 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: url("../img/bg-01.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 /* here start the header */
 
@@ -223,6 +227,10 @@ h1 {
     /* display: flex; */
     align-self: flex-end;
 }
+.search-container {
+    padding:  10px 10px 0 0;
+}
+
 
 figure {
     border-radius: 6px;
@@ -242,49 +250,207 @@ figure h2 {
 figure img {
     width: 82%;
 }
-/* here start footer*/
+
 footer {
-    background-color: grey;
+    background-color: #808080;
     display: flex;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
 }
-footer .wrapper {
+footer .nav {
     /*max-width: 1024px;*/
     /*margin: 0 auto;*/
-    display: flex;
-    align-self: center;
     padding: 20px;
     color: white;
 }
-/*.wrapper :hover{*/
-/*    color: black;*/
-/*}*/
 
 .social-icons {
     list-style: none;
     display: flex;
     flex-direction: row;
 }
-.social-icons :hover{
-    color: black;
-}
 
 .social-icons li {
     font-size: 26px;
     margin: 2px 7px;
 }
-.fa-facebook-square{
-    color: white;
+
+.social-icons .fa-facebook-square:hover {
+    color: #1877f2;
 }
-.fa-instagram{
-    color: white;
+
+.social-icons .fa-twitter-square:hover {
+    color: #1da1f2;
 }
-.fa-twitter-square{
-    color: white;
+
+.social-icons .fa-instagram:hover {
+    color: #c32aa3;
 }
-.text_link :hover{
+
+
+
+
+/* PopUp */
+.popup {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 380px;
+    padding: 20px 30px;
+    background-color: #a0cfd5;
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    transition: top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms;
+}
+
+.popup.active {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 20ms ease-in-out 0ms;
+}
+
+.pop-light-border {
+    border-radius: 8px;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.popup input {
+    display: inline-block;
+    width: 100%;
+    margin: .5em 0;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 26px;
+    height: 26px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 24px;
+    font-size: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* The PopUp (background) */
+.overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup form .form-element {
+    margin:15px 0px;
+}
+.popup form .form-element label {
+    font-size:14px;
+    color:#222;
+}
+
+.popup form #remember-me {
+    width: 5%;
+}
+
+.popup form .form-element input[type="checkbox"] {
+    margin-right:5px;
+}
+
+.popup form .form-element button {
+    width:100%;
+    height:50px;
+    border:none;
+    outline:none;
+    font-size:16px;
+    background-color: #afeeee;
     color: black;
+    border-radius: 7px;
+    cursor:pointer;
 }
+
+.popup form .form-element a {
+    display:block;
+    text-align:right;
+    font-size:15px;
+    color: #444545;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* PopUp */
+
+/* Register page START */
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2.2em 0;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: beige;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.popup, #reg-user-form {
+    width: 620px;
+}
+
+.form-wrapper {
+    margin: 2em 1em;
+}
+
+.form-wrapper h3 {
+    margin-bottom: 25px;
+}
+
+.light-border {
+    border-radius: 8px;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.form-wrapper input {
+    display: inline-block;
+    width: 100%;
+    margin: .5em 0;
+}
+
+.fname, .lname, .mail, .adrs, .phn, .psw {
+    width: 46%;
+    display: inline-block;
+    margin: 0 10px 15px 10px;
+}
+
+.light-btn{
+    display: flex;
+    justify-content: center;
+    background-color: #afeeee;
+    color: black;
+    width: 60%;
+    margin: 0 auto;
+}
+/* Register page END */
+
 @media only screen and (max-width: 600px) {
     footer{
         display: flex;

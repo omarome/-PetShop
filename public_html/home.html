@@ -34,10 +34,11 @@
         </div>
         <div class="nav-right">
             <ul class="header-btns">
-                <li class="in-btn"><a href="registr.html">Sign In</a></li>
-                <li class="up-btn"><a href="#">Sign Up</a></li>
+                <li class="up-btn"><a href="#">Post an Ade</a></li>
+                <li class="in-btn" id="show-login"><a href="#">Log In</a></li>
             </ul>
 
+        </div>
         </div>
     </nav>
 
@@ -56,31 +57,63 @@
     </article>
 </section>
 <footer>
-    <div class="wrapper">
-        Contact us:
-        <div class="text_link">
-            <a href="https://gmail.com">email@mail.com</a>
-        </div>
-
+    <div class="nav">
+        Contact us: 0440XXXXXXX
     </div>
-    <div class="wrapper">
+    <div class="nav">
+        Contact us: email@mail.com
+    </div>
+    <div class="nav">
         <ul class="social-icons">
             <li class="fb">
-                <a href="https://facebook.com">
-                    <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-            </li>
+                <i class="fa fa-facebook-square" aria-hidden="true"></i></li>
             <li class="ig">
-                <a href="https://instagram.com">
-                    <i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </li>
+                <i class="fa fa-instagram" aria-hidden="true"></i></li>
             <li class="tw">
-                <a href="https://twitter.com">
-                    <i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-            </li>
+                <i class="fa fa-twitter-square" aria-hidden="true"></i></li>
         </ul>
     </div>
 </footer>
 
+
+
+<!-- PopUp -->
+
+<div class="modal">
+
+    <div class="overlay"></div>
+
+    <div class="popup">
+        <div class="close-btn">&times;</div>
+        <form id="login-form" class="pop-light-border">
+            <h3>Login</h3>
+            <div class="form-element">
+                <span class="fa fa-user"></span>
+                <label>Username:</label>
+                <input class="light-border" type="email" name="username" placeholder="Email"/>
+            </div>
+            <div class="form-element">
+                <span class="fa fa-lock"></span>
+                <label>Password:</label>
+                <input class="light-border" type="password" name="password" placeholder="Password"/>
+            </div>
+            <div class="form-element">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <div class="form-element">
+                <button class="light-border light-btn" type="submit">Log In</button>
+            </div>
+            <div class="form-element">
+                <a href="register.html">Sign Up</a>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<!----jscript home-link--------->
 <script src="js/home.js"></script>
+
 </body>
 </html>

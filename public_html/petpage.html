@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Pet Details Page</title>
     <link rel="stylesheet" href="../public_html/css/mainpage.css">
-    <link rel="stylesheet" href="../public_html/css/single_pet.css">
+    <link rel="stylesheet" href="css/petpage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -35,11 +35,12 @@
         </div>
         <div class="nav-right">
             <ul class="header-btns">
-                <li class="in-btn"><a href="registr.html">Sign In</a></li>
-                <li class="up-btn"><a href="#">Sign Up</a></li>
+                <li class="up-btn"><a href="#">Post an Ade</a></li>
+                <li class="in-btn" id="show-login"><a href="#">Log In</a></li>
             </ul>
 
         </div>
+
     </nav>
 
 </header>
@@ -115,6 +116,7 @@
         </div>
     </article>
 </section>
+
 <footer>
     <div class="wrapper">
         Contact us:
@@ -141,6 +143,47 @@
     </div>
 </footer>
 
-<script src="js/single_pet.js"></script>
+
+
+<!-- PopUp -->
+
+<div class="modal">
+
+    <div class="overlay"></div>
+
+    <div class="popup">
+        <div class="close-btn">&times;</div>
+        <form id="login-form" class="pop-light-border">
+            <h3>Login</h3>
+            <div class="form-element">
+                <span class="fa fa-user"></span>
+                <label>Username:</label>
+                <input class="light-border" type="email" name="username" placeholder="Email"/>
+            </div>
+            <div class="form-element">
+                <span class="fa fa-lock"></span>
+                <label>Password:</label>
+                <input class="light-border" type="password" name="password" placeholder="Password"/>
+            </div>
+            <div class="form-element">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <div class="form-element">
+                <button class="light-border light-btn" type="submit">Log In</button>
+            </div>
+            <div class="form-element">
+                <a href="register.html">Sign Up</a>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+<!----jscript home-link--------->
+<script src="js/home.js"></script>
+
+<script src="js/petpage.js"></script>
 </body>
 </html>
