@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fbc3a28-c6b6-4727-95f0-4e23a4318e96" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/petController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/petController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/petModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/petModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/petRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/petRoute.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
