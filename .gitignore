@@ -86,3 +86,6 @@ public
 certrequest.csr
 ssl-cert.pem
 ssl-key.pem
+
+# test.html for testing the data localy
+/public_html/test.html

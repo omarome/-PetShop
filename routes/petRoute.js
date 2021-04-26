@@ -6,6 +6,6 @@ const router = express.Router();
 const petController = require('../controllers/petController');
 
 router.get('/' , petController.pet_list_get);
-router.get('/sorted',petController.pets_sorted)
-
+router.get('/:id', petController.pet_get_by_id);
+router.delete('/:id' , petController.pet_delete);
 module.exports = router;

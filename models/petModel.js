@@ -5,7 +5,7 @@ const promisePool = pool.promise();
 
 const getAllPets = async () => {
   try {
-    const [rows] = await promisePool.query('SELECT wop_cat.*, wop_user.name AS ownername FROM wop_cat, wop_user WHERE wop_cat.owner = wop_user.user_id');
+    const [rows] = await promisePool.query('SELECT * FROM USER_PET');
     console.log('something back from db?', rows);
     return rows;
   } catch (e) {
@@ -15,7 +15,7 @@ const getAllPets = async () => {
 const getAllPetsSorted = async (order) => {
   try {
     const [rows] = await promisePool.query(
-        `SELECT wop_cat.*, wop_user.name AS ownername FROM wop_cat, wop_user WHERE wop_cat.owner = wop_user.user_id ORDER BY ${order}`);
+        `SELECT * FROM USER_PET ORDER BY ${order}`);
     return rows;
   } catch (e) {
     console.error('error', e.message);
@@ -40,6 +40,7 @@ const deletePet = async (id) => {
     console.error('petModel:', e.message);
   }
 };
+
 
 
 module.exports = {

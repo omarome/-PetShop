@@ -5,24 +5,20 @@ const petModel = require('../models/petModel');
 
 const pet_list_get = async (req, res) => {
   console.log('get all pets from controller', req.query);
-  const pets = await petModel.getAllPets();
-  res.json(pets);
-};
-const pets_sorted = async (req,res) => {
-  console.log('get all pets sorted from controller', req.query);
-
-  if (req.query.sort === 'cat_id') {
-    const sortPets = await petModel.getAllPetsSorted('cat_id');
+  if (req.query.sort === 'pet_id') {
+    const sortPets = await petModel.getAllPetsSorted('pet_id');
     res.json(sortPets);
     return;
-  } else if (req.query.sort === 'age') {
-    const sortPets = await petModel.getAllPetsSorted('age');
+  } else if (req.query.sort === 'pet_category_id') {
+    const sortPets = await petModel.getAllPetsSorted('pet_category_id');
     res.json(sortPets);
     return;
   }
-  const petsSorted = await petModel.getAllPetsSorted();
-  res.json(petsSorted);
+
+  const pets = await petModel.getAllPets();
+  res.json(pets);
 };
+
 
 
 const pet_get_by_id = async (req, res) => {
@@ -39,9 +35,9 @@ const pet_delete = async (req, res) => {
 
 
 
+
 module.exports = {
   pet_list_get,
-  pets_sorted,
   pet_delete,
   pet_get_by_id,
 
