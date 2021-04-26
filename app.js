@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/pet', petRouter);
-
+app.use('/sorted', petRouter);
 app.use('/user', userRoute);
 
 

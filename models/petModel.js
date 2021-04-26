@@ -12,8 +12,40 @@ const getAllPets = async () => {
     console.error('error', e.message);
   }
 };
+const getAllPetsSorted = async (order) => {
+  try {
+    const [rows] = await promisePool.query(
+        `SELECT wop_cat.*, wop_user.name AS ownername FROM wop_cat, wop_user WHERE wop_cat.owner = wop_user.user_id ORDER BY ${order}`);
+    return rows;
+  } catch (e) {
+    console.error('error', e.message);
+  }
+};
+const getPet = async (id) => {
+  try {
+    console.log('petModel getCat', id);
+    const [rows] = await promisePool.execute('SELECT * FROM project_pet WHERE PID = ?', [id]);
+    return rows[0];
+  } catch (e) {
+    console.error('catModel:', e.message);
+  }
+};
+
+const deletePet = async (id) => {
+  try {
+    console.log('catModel delete pet', id);
+    const [rows] = await promisePool.execute('DELETE FROM project_pet WHERE PID = ?', [id]);
+    return rows.affectedRows === 1;
+  } catch (e) {
+    console.error('petModel:', e.message);
+  }
+};
 
 
 module.exports = {
-  getAllPets
+  getAllPets,
+  getAllPetsSorted,
+  deletePet,
+  getPet,
+
 };
