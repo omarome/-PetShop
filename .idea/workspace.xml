@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0fbc3a28-c6b6-4727-95f0-4e23a4318e96" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/petpage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/petpage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/home-logged-in.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/home-logged-in.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/home-logged-in.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/home-logged-in.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
