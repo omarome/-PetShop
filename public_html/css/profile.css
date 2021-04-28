@@ -1,0 +1,34 @@
+
+
+.middle_page{
+    display: flex;
+    flex-direction: row;
+}
+.profile_img{
+    padding: 50px;
+}
+.profile_img img{
+    width: 300px;
+}
+.profile_info{
+    width: 400px;
+    position: relative;
+
+}
+.change_password{
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    font-weight : bold ;
+}
+.password_header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.change_password button{
+    width: 70px;
+    font-weight : bold ;
+}
+#newpass_again{
+    margin-bottom: 5px;
+}
