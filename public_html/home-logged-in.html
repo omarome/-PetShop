@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Home Page</title>
 
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/home-logged-in.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -47,35 +47,23 @@
             </ul>
 
         </div>
+
     </nav>
 
 </header>
-
-<section class="middle_page">
-
-    <div class="profile_img">
-        <h1>Your profile</h1>
-    </div>
-
-    <div class="profile_info">
-    </div>
-
-    <div class="change_password">
-        <h4 class="password_header">Change password</h4>
-        <label for="pass">Old password:</label>
-        <input type="password" id="pass" name="password" placeholder="">
-        <label for="newpass">New password:</label>
-        <input type="password" id="newpass" name="new_password" placeholder="">
-        <label for="newpass_again">New password again:</label>
-        <input type="password" id="newpass_again" name="new_password_again" placeholder="">
-        <button>Save changes</button>
-    </div>
-
-</section>
 <section>
-    <div class="grid-col1"><h1>Your adds</h1></div>
+    <article class="container">
+        <div class="grid-col2">
+            <div class="search-container">
+                <form action="/action_page.php">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <input type="text" placeholder="Search.." name="search">
+                </form>
+            </div
+            ></div>
+        <div class="grid-col1"><h1>Latest Posts</h1></div>
+    </article>
 </section>
-
 <footer>
     <div class="nav">
         Contact us: 0440XXXXXXX
@@ -96,10 +84,8 @@
 </footer>
 
 
-
-
 <!----jscript home-link--------->
-<script src="js/profile.js"></script>
+<script src="js/index.js"></script>
 
 </body>
 </html>
