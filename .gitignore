@@ -78,13 +78,14 @@ typings/
 #DynamoDB Local files
 .dynamodb/
 /uploads/
-/node_modules/
 #public for test
 public
+/utils/
+/thumbnails/
+/node_modules/
 
 #https
 certrequest.csr
 ssl-cert.pem
 ssl-key.pem
-/utils/
-/thumbnails/
+
