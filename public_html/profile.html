@@ -2,9 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home Page</title>
+
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
+<header>
+    <!-- add header here -->
+    <nav class="nav">
+        <div class="logo-title">
+            <div class="page-title"><h3>PetShop</h3></div>
+            <div class="logo-img"><img src="img/PetShopLogo.png"></div>
+        </div>
+        <div class="nav-left">
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a>Category</a>
+                    <ul class="dropdown-content">
+                        <li><a href="./.html">All</a></li>
+                        <li><a href="./.html">Cats</a></li>
+                        <li><a href="./.html">Dogs</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Contact Us</a></li>
+
+                <li></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul class="header-btns">
+                <li class="dropdown">
+                    <a>👤</a>
+                    <ul class="dropdown-content" id="dropdown-content2">
+                        <li class="dropdown_item"><a class="dropdown_link" href="./profile.html">Profile</a></li>
+                        <li class="dropdown_item"><a class="dropdown_link" href="./adpage.html">Post an ad</a></li>
+                        <li class="dropdown_item"><a class="dropdown_link" href="./index.html">Log out</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+</header>
+
+<section class="middle_page">
+
+    <div class="profile_img">
+        <h1>Your profile</h1>
+    </div>
+
+    <div class="profile_info">
+    </div>
+
+    <div class="change_password">
+        <h4 class="password_header">Change password</h4>
+        <label for="pass">Old password:</label>
+        <input type="password" id="pass" name="password" placeholder="">
+        <label for="newpass">New password:</label>
+        <input type="password" id="newpass" name="new_password" placeholder="">
+        <label for="newpass_again">New password again:</label>
+        <input type="password" id="newpass_again" name="new_password_again" placeholder="">
+        <button>Save changes</button>
+    </div>
+
+</section>
+<section>
+    <div class="grid-col1"><h1>Your adds</h1></div>
+</section>
+
+<footer>
+    <div class="nav">
+        Contact us: 0440XXXXXXX
+    </div>
+    <div class="nav">
+        Contact us: email@mail.com
+    </div>
+    <div class="nav">
+        <ul class="social-icons">
+            <li class="fb">
+                <i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+            <li class="ig">
+                <i class="fa fa-instagram" aria-hidden="true"></i></li>
+            <li class="tw">
+                <i class="fa fa-twitter-square" aria-hidden="true"></i></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+
+<!----jscript home-link--------->
+<script src="js/profile.js"></script>
 
 </body>
 </html>

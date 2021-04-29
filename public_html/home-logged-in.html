@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+
+    <link rel="stylesheet" href="css/home-logged-in.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -34,12 +36,18 @@
         </div>
         <div class="nav-right">
             <ul class="header-btns">
-                <li class="up-btn"><a href="#">Post an Ade</a></li>
-                <li class="in-btn" id="show-login"><a href="#">Log In</a></li>
+                <li class="dropdown">
+                    <a>👤</a>
+                    <ul class="dropdown-content" id="dropdown-content2">
+                        <li class="dropdown_item"><a class="dropdown_link" href="./profile.html">Profile</a></li>
+                        <li class="dropdown_item"><a class="dropdown_link" href="./adpage.html">Post an ad</a></li>
+                        <li class="dropdown_item"><a class="dropdown_link" href="./index.html">Log out</a></li>
+                    </ul>
+                </li>
             </ul>
 
         </div>
-        </div>
+
     </nav>
 
 </header>
@@ -74,6 +82,7 @@
         </ul>
     </div>
 </footer>
+
 
 <!----jscript home-link--------->
 <script src="js/index.js"></script>
