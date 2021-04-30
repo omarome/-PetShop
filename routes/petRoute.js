@@ -8,6 +8,7 @@ const petController = require('../controllers/petController');
 
 router.get('/' , petController.pet_list_get);
 router.get('/:id', petController.pet_get_by_id);
+router.get('/user/:id', petController.pet_get_by_user_id);
 router.delete('/:id' , petController.pet_delete);
 router.post('/',petController.pet_create);
 router.post('/',petController.pet_update);

@@ -21,6 +21,7 @@ const getAllPetsSorted = async (order) => {
     console.error('error', e.message);
   }
 };
+
 const getPet = async (id) => {
   try {
     console.log('petModel getPet', id);
@@ -30,6 +31,8 @@ const getPet = async (id) => {
     console.error('petModel:', e.message);
   }
 };
+
+
 
 const deletePet = async (id) => {
   try {
@@ -53,13 +56,22 @@ const insertPet = async (req) => {
     return 0;
   }
 };
+
 const petUpdate = async (pet) => {
   const [row] = await promisePool.execute('UPDATE USER_PET SET `title`=?, `birthdate`=?, `breed`=?, `price`=?. `picture`=?, `description`=?, `pet_vst`=?, `user_id`=?, `pet_category_id`=? WHERE PET_ID=?', [pet.title, pet.birthdate, pet.breed, pet.price, pet.picture, pet.description, pet.pet_vst, pet.user_id, pet.category_id]);
   console.log('update row', row);
   return row.insertId;
 };
 
-
+const getAllUserPets = async (id) => {
+  try {
+    console.log('petModel getAllUserPets', id);
+    const [rows] = await promisePool.execute('SELECT * FROM USER_PET WHERE user_id = ?', [id]);
+    return rows;
+  } catch (e) {
+    console.error('petModel:', e.message);
+  }
+};
 
 module.exports = {
   getAllPets,
@@ -68,4 +80,5 @@ module.exports = {
   getPet,
   insertPet,
   petUpdate,
+  getAllUserPets,
 };

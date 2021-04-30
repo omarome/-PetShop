@@ -16,7 +16,22 @@ const user_create_post = async (req, res) => {
   res.json(user);
 };
 
+const user_get_by_id = async (req, res) => {
+  console.log('userController: http get user with path param', req.params);
+  const user = await userModel.getUser(req.params.id);
+  res.json(user);
+}
+//idk if works
+// const user_update = async (req, res) => {
+// const updateOk = await userModel.updateUser(req.params.id, req);
+// res.send(`updated... ${updateOk}`);
+// };
+
+
+
 module.exports = {
   user_list_get,
   user_create_post,
+  user_get_by_id,
+  // user_update,
 };
