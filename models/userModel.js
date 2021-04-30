@@ -31,7 +31,7 @@ const getUser = async (id) => {
   }
 };
 
-//idk if works
+// idk if works
 // const updateUser = async (id, req) => {
 //   try {
 //     const [rows] = await promisePool.execute('UPDATE REGISTER_USER SET firstname = ?, lastname = ?, email_address = ?, password = ?, phone_number = ?, picture = ?, address = ?, user_type_id WHERE user_ID = ?;',
