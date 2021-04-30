@@ -28,6 +28,7 @@ const upload = multer({ dest: 'uploads/', fileFilter });
 
 router.get('/' , petController.pet_list_get);
 router.get('/:id', petController.pet_get_by_id);
+router.get('/user/:id', petController.pet_get_by_user_id);
 router.delete('/:id' , petController.pet_delete);
 router.post('/',
     upload.single('pet'),

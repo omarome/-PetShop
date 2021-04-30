@@ -20,8 +20,19 @@ const addUser = async (user) => {
   console.log('insert row', row);
   return row.insertId;
 };
+//usermodel
+const getUserById = async (id) => {
+  try {
+    console.log('userModel getUser', id);
+    const [rows] = await promisePool.execute('SELECT * FROM REGISTER_USER WHERE user_ID = ?', [id]);
+    return rows[0];
+  } catch (e) {
+    console.error('userModel:', e.message);
+  }
+};
 
 module.exports = {
   getAllUsers,
   addUser,
+  getUserById,
 };

@@ -1,5 +1,4 @@
 'use strict';
-//this section is copied from omar
 const url = 'http://localhost:3000'; // change url when uploading to server
 
 const grid = document.querySelector('.grid-col1');
@@ -24,18 +23,45 @@ const createPetCards = (pets) => {
     const h3 = document.createElement('h3');
     h3.innerText = pet.breed;
 
-    //location!?
-    // const p = document.createElement('p');
-    // p.innerText = file.location;
-
     // view button
     const viewButton = document.createElement('button');
-    viewButton.innerText = 'view pet';
+    const deleteButton = document.createElement('button');
+    //delete pet
+    deleteButton.innerHTML = 'Delete';
+    deleteButton.addEventListener('click', async () => {
+      var result = confirm("Are you sure you want delete this item permanently?");
+      if (result) {
+        const fetchOptions = {
+          method: 'DELETE',
+          headers: {
+            'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+          },
+        };
+        try {
+          const response = await fetch(url + '/pet/' + pet.pet_id, fetchOptions);
+          const json = await response.json();
+          console.log('delete response', json);
+          getPet();
+        }
+        catch (e) {
+          console.log(e.message());
+        }
+        location.reload();
+        return false;
+      }
+    });
 
+
+    viewButton.innerText = 'view pet';
     viewButton.style.textTransform = 'uppercase';
     viewButton.style.padding = '8px 24px';
     viewButton.style.marginLeft = '10px';
     viewButton.style.marginBottom = '15px';
+
+    deleteButton.style.textTransform = 'uppercase';
+    deleteButton.style.padding = '8px 24px';
+    deleteButton.style.marginLeft = '10px';
+    deleteButton.style.marginBottom = '15px';
 
     figure.appendChild(h2);
     figure.appendChild(img);
@@ -43,16 +69,33 @@ const createPetCards = (pets) => {
     figure.appendChild(price);
     // figure.appendChild(p);
     figure.appendChild(viewButton);
+    figure.appendChild(deleteButton);
 
     //main.appendChild(article);
     grid.appendChild(figure);
   });
 };
+//add profile information
+const profile = (personInfo) => {
+  const profile_info = document.querySelector('.profile_info ');
+  profile_info.innerHTML +=
+      `<h3>First name: ${personInfo.firstname}</h3>
+    <h3>Last name: ${personInfo.lastname}</h3>
+    <h3>Email: ${personInfo.email_address}</h3>
+    <h3>Phone number: ${personInfo.phone_number}</h3>
+    <h3>Address: ${personInfo.address}</h3>`;
 
-// AJAX call
-const getPet = async () => {
+  const img = document.querySelector('.profile_img');
+  img.innerHTML += `<img src="${personInfo.PICTURE}" alt="Profile_picture">`
+}
+
+const addForm = document.querySelector('#password_two');
+
+// AJAX calls
+
+const getPet = async (user_id) => {
   try {
-    const response = await fetch(url + '/pet');
+    const response = await fetch(url + `/pet/user/${user_id}`);
     const pets = await response.json();
     createPetCards(pets);
   }
@@ -60,35 +103,16 @@ const getPet = async () => {
     console.log(e.message);
   }
 };
-getPet();
+getPet(1);
 
-//omar code ends
-
-const personInfo =
-    {
-      'USER_ID' : '1',
-      'USER_TYPE_ID' : '1',
-      'FNAME' : 'Sepi',
-      'LNAME' : 'Temmes',
-      'EMAIL_ADDRESS' : 'placeholder@email.com',
-      'PASSWORD' : 'TEXT NOT NULL',
-      'BIRTHDAY' : 'DATE   NULL',
-      'SEX' : 'CHAR(1) NULL',
-      'PHONE_NUMBER' : 'INT NULL',
-      'PICTURE' : 'img/pic1.png',
-      'ADDRESS' : 'Kopinkuja 5 2000 Espoo',
-      'USER_VST' :  'DATE  GENERATED',
-      'USER_VET' : 'DATE',
-      'PRIMARY KEY':'(USER_ID, USER_VST'
-    }
-
-const profile_info = document.querySelector('.profile_info ');
-profile_info.innerHTML+=
-    `<h3>First name: ${personInfo.FNAME}</h3>
-<h3>Last name: ${personInfo.LNAME}</h3>
-<h3>Email: ${personInfo.EMAIL_ADDRESS}</h3>
-<h3>Phone number: ${personInfo.PHONE_NUMBER}</h3>
-<h3>Address: ${personInfo.ADDRESS}</h3>`;
-
-const img = document.querySelector('.profile_img');
-img.innerHTML+= `<img src="${personInfo.PICTURE}" alt="Profile_picture">`
+const getUser = async (id) => {
+  try {
+    const response = await fetch(url + '/user/' + id);
+    const user = await response.json();
+    profile(user)
+  }
+  catch (e) {
+    console.log(e.message);
+  }
+};
+getUser(1)
