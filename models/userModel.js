@@ -20,8 +20,8 @@ const addUser = async (user) => {
   console.log('insert row', row);
   return row.insertId;
 };
-
-const getUser = async (id) => {
+//usermodel
+const getUserById = async (id) => {
   try {
     console.log('userModel getUser', id);
     const [rows] = await promisePool.execute('SELECT * FROM REGISTER_USER WHERE user_ID = ?', [id]);
@@ -31,22 +31,8 @@ const getUser = async (id) => {
   }
 };
 
-// idk if works
-// const updateUser = async (id, req) => {
-//   try {
-//     const [rows] = await promisePool.execute('UPDATE REGISTER_USER SET firstname = ?, lastname = ?, email_address = ?, password = ?, phone_number = ?, picture = ?, address = ?, user_type_id WHERE user_ID = ?;',
-//         [req.body.firstname, req.body.lastname, req.body.email_address, req.body.password, req.body.phone_number, req.body.picture, req.body.address, req.body.user_type_id, id]);
-//     console.log('userModel update:', rows);
-//     return rows.affectedRows === 1;
-//   } catch (e) {
-//     return false;
-//   }
-// };
-
-
 module.exports = {
   getAllUsers,
   addUser,
-  getUser,
-  // updateUser,
+  getUserById,
 };

@@ -23,10 +23,6 @@ const createPetCards = (pets) => {
     const h3 = document.createElement('h3');
     h3.innerText = pet.breed;
 
-    //location!?
-    // const p = document.createElement('p');
-    // p.innerText = file.location;
-
     // view button
     const viewButton = document.createElement('button');
     const deleteButton = document.createElement('button');
@@ -53,7 +49,7 @@ const createPetCards = (pets) => {
         location.reload();
         return false;
       }
-      });
+    });
 
 
     viewButton.innerText = 'view pet';
@@ -79,7 +75,7 @@ const createPetCards = (pets) => {
     grid.appendChild(figure);
   });
 };
-
+//add profile information
 const profile = (personInfo) => {
   const profile_info = document.querySelector('.profile_info ');
   profile_info.innerHTML +=
@@ -94,7 +90,6 @@ const profile = (personInfo) => {
 }
 
 const addForm = document.querySelector('#password_two');
-
 
 // AJAX calls
 
@@ -112,15 +107,12 @@ getPet(1);
 
 const getUser = async (id) => {
   try {
-  const response = await fetch(url + '/user/' + id);
-  const user = await response.json();
-  profile(user)
+    const response = await fetch(url + '/user/' + id);
+    const user = await response.json();
+    profile(user)
   }
   catch (e) {
     console.log(e.message);
   }
 };
 getUser(1)
-
-
-

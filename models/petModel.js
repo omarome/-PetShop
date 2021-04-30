@@ -44,10 +44,10 @@ const deletePet = async (id) => {
   }
 };
 
-const insertPet = async (req) => {
+const insertPet = async (petObj) => {
   try {
-    const [rows] = await promisePool.execute('INSERT INTO USER_PET (title, birthdate, breed, price, picture, description, pet_vst, user_id, pet_category_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);',
-        [req.body.title, req.body.birthdate, req.body.breed, req.body.price, req.body.picture, req.body.description, req.body.pet_vst, req.body.user_id, req.body.category_id]);
+    const [rows] = await promisePool.execute('INSERT INTO USER_PET (title, birthdate, breed, price, picture, description, user_id, pet_category_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?);',
+        [petObj.title, petObj.birthdate, petObj.breed, petObj.price, petObj.filename , petObj.description,  petObj.user_id, petObj.pet_category_id]);
 
     console.log('petModel insert:', rows);
     return rows.insertId;
@@ -61,6 +61,15 @@ const petUpdate = async (pet) => {
   const [row] = await promisePool.execute('UPDATE USER_PET SET `title`=?, `birthdate`=?, `breed`=?, `price`=?. `picture`=?, `description`=?, `pet_vst`=?, `user_id`=?, `pet_category_id`=? WHERE PET_ID=?', [pet.title, pet.birthdate, pet.breed, pet.price, pet.picture, pet.description, pet.pet_vst, pet.user_id, pet.category_id]);
   console.log('update row', row);
   return row.insertId;
+};
+const getAllUserPets = async (id) => {
+  try {
+    console.log('petModel getAllUserPets', id);
+    const [rows] = await promisePool.execute('SELECT * FROM USER_PET WHERE user_id = ?', [id]);
+    return rows;
+  } catch (e) {
+    console.error('petModel:', e.message);
+  }
 };
 
 const getAllUserPets = async (id) => {

@@ -6,6 +6,5 @@ router.route('/')
 .get(userController.user_list_get)
 .post(userController.user_create_post);
 router.get('/:id', userController.user_get_by_id);
-//idk if this works
-// router.put('/:id', userController.user_update);
+
 module.exports = router;
