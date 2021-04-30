@@ -41,7 +41,8 @@ const createPetCards = (pets) => {
     //routing to the details page through the viewButton
 
     viewButton.addEventListener("click", function(){
-      document.location.href = 'pet-page.html';
+      document.location.href = 'pet-page.html?id='+ pet.pet_id;
+
 
     });
 
@@ -57,6 +58,7 @@ const createPetCards = (pets) => {
 //the start for category dropdown menu(dogs,cats, all)
  window.test = async function(e) {
  if (e.value === 'dog') {
+//pet/${id}
 
      const response = await fetch(url +`/pet?sort=${e.value}`);
      console.log(`by category dog `)

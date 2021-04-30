@@ -43,8 +43,8 @@ const deletePet = async (id) => {
 
 const insertPet = async (petObj) => {
   try {
-    const [rows] = await promisePool.execute('INSERT INTO USER_PET (title, birthdate, breed, price, picture, description, pet_vst, user_id, pet_category_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);',
-        [petObj.title, petObj.birthdate, petObj.breed, petObj.price, petObj.filename , petObj.description, petObj.pet_vst, petObj.user_id, petObj.pet_category_id]);
+    const [rows] = await promisePool.execute('INSERT INTO USER_PET (title, birthdate, breed, price, picture, description, user_id, pet_category_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?);',
+        [petObj.title, petObj.birthdate, petObj.breed, petObj.price, petObj.filename , petObj.description,  petObj.user_id, petObj.pet_category_id]);
 
     console.log('petModel insert:', rows);
     return rows.insertId;

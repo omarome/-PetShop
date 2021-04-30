@@ -5,12 +5,8 @@ const petModel = require('../models/petModel');
 
 const pet_list_get = async (req, res) => {
   console.log('get all pets from controller', req.query);
-  if (req.query.sort === 'dog') {
-    const sortPets = await petModel.getAllPetsSorted('dog');
-    res.json(sortPets);
-    return;
-  } else if (req.query.sort === 'cat') {
-    const sortPets = await petModel.getAllPetsSorted('cat');
+  if (req.query.sort ) {
+    const sortPets = await petModel.getAllPetsSorted(req.query.sort);
     res.json(sortPets);
     return;
   }
@@ -30,6 +26,8 @@ const pet_create = async (req, res) => {
   console.log('petController pet_create', req.body, req.body);
   const petOpj= req.body;
   petOpj.filename= req.file.filename;
+  //petOpj.user_id = req.user.user_ID;
+  //petOpj.user_id = 1;
   const id = await petModel.insertPet(petOpj);
   const pet = await petModel.getPet(id);
   res.send(pet);
