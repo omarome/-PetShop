@@ -1,5 +1,5 @@
 "use strict";
-function myFunction(imgs) {
+ const routingImagesFun=(imgs)=> {
   const expandImg = document.getElementById("expandedImg");
   expandImg.src = imgs.src;
   expandImg.parentElement.style.display = "block";
@@ -18,10 +18,10 @@ const id= getParameterByName('id')
 alert(id)
 // PopUp
 
-document.querySelector("#show-login").addEventListener("click",function(){
+document.querySelector("#show-login").addEventListener("click",()=>{
   document.querySelector(".popup").classList.add("active");
 });
-document.querySelector(".popup .close-btn").addEventListener("click",function(){
+document.querySelector(".popup .close-btn").addEventListener("click",()=>{
   document.querySelector(".popup").classList.remove("active");
 });
 
