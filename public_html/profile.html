@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Home Page</title>
 
+    <link rel="stylesheet" href="css/home-logged-in.css">
     <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,9 +24,9 @@
                 <li class="dropdown">
                     <a>Category</a>
                     <ul class="dropdown-content">
-                        <li ><a href="./=">All</a></li>
-                        <li ><a href="./">Cats</a></li>
-                        <li ><a href="./">Dogs</a></li>
+                        <li><a href="./.html">All</a></li>
+                        <li><a href="./.html">Cats</a></li>
+                        <li><a href="./.html">Dogs</a></li>
                     </ul>
                 </li>
                 <li><a href="about.html">About Us</a></li>
@@ -60,16 +61,16 @@
     <div class="profile_info">
     </div>
 
-    <div class="change_password">
-        <h4 class="password_header">Change password</h4>
-        <label for="pass">Old password:</label>
-        <input type="password" id="pass" name="password" placeholder="">
-        <label for="newpass">New password:</label>
-        <input type="password" id="newpass" name="new_password" placeholder="">
-        <label for="newpass_again">New password again:</label>
-        <input type="password" id="newpass_again" name="new_password_again" placeholder="">
-        <button>Save changes</button>
-    </div>
+    <form class="light-border" id="change_password">
+        Old password:
+        <input class="light-border" type="password" name="password" pattern="(?=.*[A-Z]).{8,}"
+               placeholder="Password" required>
+        New password:
+        <input id="password" class="light-border" name="password" type="password" pattern="(?=.*[A-Z]).{8,}" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" required>
+        New password again:
+        <input id="password_two" class="light-border" name="password_two" type="password" pattern="(?=.*[A-Z]).{8,}" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify Password" required>
+        <button class="light-border" type="submit">Save</button>
+    </form>
 
 </section>
 <section>

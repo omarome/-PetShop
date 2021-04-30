@@ -2,9 +2,116 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ad Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
+<header>
+    <!-- add header here -->
+    <div class="nav">
+        <div class="logo-title">
+            <div class="page-title"><h3>PetShop</h3></div>
+            <div class="logo-img"><img src="img/PetShopLogo.png"></div>
+        </div>
+        <div class="nav-left">
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a>Category</a>
+                    <ul class="dropdown-content">
+                        <li><a href="./.html">All</a></li>
+                        <li><a href="./.html">Cats</a></li>
+                        <li><a href="./.html">Dogs</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Contact Us</a></li>
+
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul class="header-btns">
+                <li class="up-btn"><a href="#">Selling</a></li>
+                <li class="in-btn"><a href="register.html">Sign In</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+</header>
+
+<section>
+    <article class="container">
+
+        <div class="form">
+
+            <div class="form-wrapper">
+
+                <form class="light-border" id="reg-user-form" action="../pet" method="post" enctype="multipart/form-data">
+                    <h1>Post an Advert</h1>
+
+                    <div class="form-element">
+                        <label>Title: </label>
+                        <input type="text" name="title" placeholder="Title"><br>
+                    </div>
+
+                    <div class="form-element">
+                        <label>Birthdate: </label>
+                        <input type="date" name="birthdate"><br>
+                    </div>
+
+                    <label>Breed: </label>
+                    <input type="text" name="breed"><br>
+
+                    <label>Price: </label>
+                    <input type="text" name="price"><br>
+                    <label>Image: </label>
+                    <input type="file" name="pet"><br>
+                    <label>Description: </label>
+                    <input type="text" name="description"><br>
+                    <label>(!)vst: </label>
+                    <input type="date" name="pet_vst">
+                    <label>(!)user_id: </label>
+                    <input type="number" name="user_id"><br>
+                    <label for="pet_category">Choose a Category</label>
+                    <select name="pet_category_id" type="number" id="pet_category">
+                        <option value="1">Cat</option>
+                        <option value="2">Dog</option>
+                    </select><br>
+                    <br>
+                    <input type="submit">
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </article>
+</section>
+
+
+<footer>
+    <div class="nav">
+        Contact us: 0440XXXXXXX
+    </div>
+    <div class="nav">
+        Contact us: email@mail.com
+    </div>
+    <div class="nav">
+        <ul class="social-icons">
+            <li class="fb">
+                <i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+            <li class="ig">
+                <i class="fa fa-instagram" aria-hidden="true"></i></li>
+            <li class="tw">
+                <i class="fa fa-twitter-square" aria-hidden="true"></i></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="js/adpage.js"></script>
 </body>
 </html>

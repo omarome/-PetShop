@@ -31,8 +31,7 @@ const createPetCards = (pets) => {
     a.href="pet-page.html"
     viewButton.appendChild(a);
     //styling the viewButton
-    viewButton.innerText = 'View More Info';
-    viewButton.style.backgroundColor =" aquamarine"
+    viewButton.innerText = 'More Info';
     viewButton.style.textTransform = 'uppercase';
     viewButton.style.padding = '8px 24px';
     viewButton.style.fontWeight = 'bold';
@@ -40,25 +39,18 @@ const createPetCards = (pets) => {
     viewButton.style.marginBottom = '15px';
     viewButton.className="viewButton";
     //routing to the details page through the viewButton
+
     viewButton.addEventListener("click", function(){
       document.location.href = 'pet-page.html';
 
     });
 
-
-
-
     figure.appendChild(h2);
     figure.appendChild(img);
     figure.appendChild(h3);
     figure.appendChild(price);
-    // figure.appendChild(p);
     figure.appendChild(viewButton);
-
-    //main.appendChild(article);
-
     grid.append(figure);
-    //grid.innerHTML= figure;
   });
 };
 
