@@ -20,8 +20,6 @@ const pet_list_get = async (req, res) => {
   res.json(pets);
 };
 
-
-
 const pet_get_by_id = async (req, res) => {
   console.log('petController: http get cat with path param', req.params);
   const pet = await petModel.getPet(req.params.id);
@@ -30,7 +28,9 @@ const pet_get_by_id = async (req, res) => {
 
 const pet_create = async (req, res) => {
   console.log('petController pet_create', req.body, req.body);
-  const id = await petModel.insertPet(req);
+  const petOpj= req.body;
+  petOpj.filename= req.file.filename;
+  const id = await petModel.insertPet(petOpj);
   const pet = await petModel.getPet(id);
   res.send(pet);
 };
