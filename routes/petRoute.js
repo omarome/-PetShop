@@ -1,15 +1,38 @@
 // Router
 'use strict';
+const multer  = require('multer');
 const express = require('express');
-
 const router = express.Router();
-
 const petController = require('../controllers/petController');
+
+const fileFilter = (req,file,cb) => {
+  if(file.mimetype === 'image/jpeg' ||
+      file.mimetype === 'image/png' ||
+      file.mimetype === 'image/gif' ){
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+};
+
+const testFile= (req ,res ,next)=> {
+  if(req.file){
+    next();
+  }else {
+    res.status(400).json({errors: 'file is not image'});
+  }
+};
+const upload = multer({ dest: 'uploads/', fileFilter });
+
+
 
 router.get('/' , petController.pet_list_get);
 router.get('/:id', petController.pet_get_by_id);
 router.delete('/:id' , petController.pet_delete);
-router.post('/',petController.pet_create);
-router.post('/',petController.pet_update);
+router.post('/',
+    upload.single('pet'),
+    testFile,
+    petController.pet_create);
+router.put('/',petController.pet_update);
 
 module.exports = router;

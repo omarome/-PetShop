@@ -41,10 +41,10 @@ const deletePet = async (id) => {
   }
 };
 
-const insertPet = async (req) => {
+const insertPet = async (petObj) => {
   try {
     const [rows] = await promisePool.execute('INSERT INTO USER_PET (title, birthdate, breed, price, picture, description, pet_vst, user_id, pet_category_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);',
-        [req.body.title, req.body.birthdate, req.body.breed, req.body.price, req.body.picture, req.body.description, req.body.pet_vst, req.body.user_id, req.body.category_id]);
+        [petObj.title, petObj.birthdate, petObj.breed, petObj.price, petObj.filename , petObj.description, petObj.pet_vst, petObj.user_id, petObj.pet_category_id]);
 
     console.log('petModel insert:', rows);
     return rows.insertId;

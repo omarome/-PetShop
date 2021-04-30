@@ -20,11 +20,11 @@
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
                     <a>Category</a>
-                    <ul class="dropdown-content">
-                        <li><a href="./.html">All</a></li>
-                        <li><a href="./.html">Cats</a></li>
-                        <li><a href="./.html">Dogs</a></li>
-                    </ul>
+                    <select class="dropdown-content" onChange="test(this);">
+                        <option value="" class="all-pets" id="all-pets" ><a href="">All</a></option>
+                        <option value="cat" class="cats" id="cat"><a href="">Cats</a></option>
+                        <option value="dog" class="dogs"  id="dog"><a href="">Dogs</a></option>
+                    </select>
                 </li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="about.html">Contact Us</a></li>
@@ -53,7 +53,7 @@
                 </form>
             </div
             ></div>
-        <div class="grid-col1"><h1>Latest Posts</h1></div>
+        <div class="grid-col1"></div>
     </article>
 </section>
 <footer>

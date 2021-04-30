@@ -3,7 +3,6 @@ const express = require('express'); // import express from 'express';
 const app = express();
 const port = 3000;
 const petRouter = require('./routes/petRoute');
-const bodyParser = require('body-parser');
 const userRoute = require('./routes/userRoute');
 
 
@@ -11,6 +10,7 @@ const userRoute = require('./routes/userRoute');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));  // For parsing application/x-www-form-urlencoded
 app.use(express.static('public_html'))
+app.use(express.static('uploads'))
 
 // 2
 
