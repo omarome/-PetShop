@@ -61,16 +61,19 @@
     <div class="profile_info">
     </div>
 
-    <form class="light-border" id="change_password">
-        Old password:
-        <input class="light-border" type="password" name="password" pattern="(?=.*[A-Z]).{8,}"
-               placeholder="Password" required>
-        New password:
-        <input id="password" class="light-border" name="password" type="password" pattern="(?=.*[A-Z]).{8,}" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" required>
-        New password again:
-        <input id="password_two" class="light-border" name="password_two" type="password" pattern="(?=.*[A-Z]).{8,}" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify Password" required>
-        <button class="light-border" type="submit">Save</button>
-    </form>
+    <div class="form-wrapper">
+        <h3>Change password</h3>
+        <form novalidate action="http://localhost:3000/user" id="change_password" class="light-border">
+            Old password:
+            <input class="light-border" id="old_password" type="password" pattern="(?=.*[A-Z]).{8,}" placeholder="Old password" required>
+            New password:
+            <input class="light-border" type="password" pattern="(?=.*[A-Z]).{8,}" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" required>
+            New password again:
+            <input class="light-border" type="password" name="password" pattern="(?=.*[A-Z]).{8,}" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify Password" required>
+            <button class="light-border" type="submit">Save changes</button>
+        </form>
+    </div>
+
 
 </section>
 <section>
@@ -101,6 +104,7 @@
 
 <!----jscript home-link--------->
 <script src="js/profile.js"></script>
+<script src="js/serialize.js"></script>
 
 </body>
 </html>

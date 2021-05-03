@@ -41,11 +41,6 @@ const pet_delete = async (req, res) => {
   const deleteOk = await petModel.deletePet(req.params.id);
   res.json(deleteOk);
 };
-const pet_get_by_user_id = async (req, res) => {
-  console.log('petController: http get cat with path param', req.params);
-  const pets = await petModel.getAllUserPets(req.params.id);
-  res.json(pets);
-};
 
 const pet_get_by_user_id = async (req, res) => {
   console.log('petController: http get cat with path param', req.params);

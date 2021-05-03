@@ -62,15 +62,6 @@ const petUpdate = async (pet) => {
   console.log('update row', row);
   return row.insertId;
 };
-const getAllUserPets = async (id) => {
-  try {
-    console.log('petModel getAllUserPets', id);
-    const [rows] = await promisePool.execute('SELECT * FROM USER_PET WHERE user_id = ?', [id]);
-    return rows;
-  } catch (e) {
-    console.error('petModel:', e.message);
-  }
-};
 
 const getAllUserPets = async (id) => {
   try {

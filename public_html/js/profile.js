@@ -86,10 +86,15 @@ const profile = (personInfo) => {
     <h3>Address: ${personInfo.address}</h3>`;
 
   const img = document.querySelector('.profile_img');
-  img.innerHTML += `<img src="${personInfo.PICTURE}" alt="Profile_picture">`
+  if(personInfo.picture===img) {
+    img.innerHTML += `<img src="${personInfo.picture}" alt="Profile_picture">`
+  }
+  else{
+    img.innerHTML += `<img src="../img/Logo.png" alt="Profile_picture">`
+  }
 }
 
-const addForm = document.querySelector('#password_two');
+// const addForm = document.querySelector('#password_two');
 
 // AJAX calls
 
@@ -116,3 +121,23 @@ const getUser = async (id) => {
   }
 };
 getUser(1)
+
+
+const change_password = document.querySelector('#change_password');
+const old_password = document.querySelector('#old_password');
+change_password.addEventListener('submit', async (evt) => {
+  evt.preventDefault();
+  const data = serializeJson(change_password);
+  const fetchOptions = {
+    method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      'Content-Type': 'application/json',
+    },      //'Content-Type': 'application/x-www-form-urlencoded',
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  };
+  console.log("fetchoptions",fetchOptions);
+  const response = await fetch(url + '/user/1', fetchOptions);
+  const json = await response.json();
+  console.log('modify response', json);
+
+});

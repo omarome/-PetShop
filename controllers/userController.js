@@ -20,9 +20,22 @@ const user_get_by_id = async (req, res) => {
   const user = await userModel.getUserById(req.params.id);
   res.json(user);
 }
+const user_update = async (req, res) => {
+
+  console.log("req.params", req.params.id);
+  console.log("req.body", req.body);
+
+  const updateOk = await userModel.updateUser(req.params.id, req);
+ // res.json(`updated... ${updateOk}`);
+
+  res.json(updateOk)
+};
+
+
 
 module.exports = {
   user_list_get,
   user_create_post,
   user_get_by_id,
+  user_update,
 };
