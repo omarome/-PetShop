@@ -68,8 +68,10 @@ const getParameterByName = (name, url = window.location.href) => {
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 };
 
-const id= getParameterByName('id');
+// const id= getParameterByName('id');
+const id = 1
 //alert(id)
+console.log("id=", id)
 const increaseViews = async (views,id)=>{
   try{
      // fetch insert route and pass id and views as paramiter

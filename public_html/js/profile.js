@@ -2,6 +2,8 @@
 const url = 'http://localhost:3000'; // change url when uploading to server
 
 const grid = document.querySelector('.grid-col1');
+const change_password = document.querySelector('#change_password');
+const old_password = document.querySelector('#old_password');
 
 const createPetCards = (pets) => {
 
@@ -29,7 +31,7 @@ const createPetCards = (pets) => {
     //delete pet
     deleteButton.innerHTML = 'Delete';
     deleteButton.addEventListener('click', async () => {
-      var result = confirm("Are you sure you want delete this item permanently?");
+      let result = confirm("Are you sure you want delete this item permanently?");
       if (result) {
         const fetchOptions = {
           method: 'DELETE',
@@ -123,8 +125,7 @@ const getUser = async (id) => {
 getUser(1)
 
 
-const change_password = document.querySelector('#change_password');
-const old_password = document.querySelector('#old_password');
+
 change_password.addEventListener('submit', async (evt) => {
   evt.preventDefault();
   const data = serializeJson(change_password);
@@ -135,9 +136,10 @@ change_password.addEventListener('submit', async (evt) => {
     },      //'Content-Type': 'application/x-www-form-urlencoded',
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   };
-  console.log("fetchoptions",fetchOptions);
   const response = await fetch(url + '/user/1', fetchOptions);
   const json = await response.json();
   console.log('modify response', json);
+  location.reload();
+  alert('Password changed');
 
 });

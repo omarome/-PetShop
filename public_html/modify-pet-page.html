@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet Details Page</title>
+  <link rel="stylesheet" href="css/logged-in.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pet-page.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header>
+  <!-- add header here -->
+  <nav class="nav">
+    <div class="logo-title">
+      <div class="page-title"><h3>PetShop</h3></div>
+      <div class="logo-img"><img src="img/PetShopLogo.png"></div>
+    </div>
+    <div class="nav-left">
+      <ul class="main-nav">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a>Category</a>
+          <ul class="dropdown-content">
+            <li><a href="./.html">All</a></li>
+            <li><a href="./.html">Cats</a></li>
+            <li><a href="./.html">Dogs</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">Contact Us</a></li>
+
+        <li></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <ul class="header-btns">
+        <li class="up-btn"><a href="#">Post an Ade</a></li>
+        <li class="in-btn" id="show-login"><a href="#">Log In</a></li>
+      </ul>
+
+    </div>
+
+  </nav>
+
+</header>
+<section>
+  <article id="ad">
+    <div id="card">
+
+      <div class="img-row">
+        <div class="img-column">
+          <img src="./img/pic1.png" alt="cat"
+               onclick="routingImagesFun(this);">
+        </div>
+        <div class="img-column">
+          <img src="./img/pic2.png" alt="cat"
+               onclick="routingImagesFun(this);">
+        </div>
+        <div class="img-column">
+          <img src="./img/pic3.png" alt="cat"
+               onclick="routingImagesFun(this);">
+        </div>
+      </div>
+
+      <div class="images-container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img src="./img/pic2.png" alt="cat" id="expandedImg" style="width:100%">
+      </div>
+
+    </div>
+
+  </article>
+  <article id="ade-details">
+    <div id="ade-content">
+      <h1 > Pet for sell</h1>
+      <div class="pet-details">
+        <h1 >Title: <span id="title"> </span></h1>
+        <h3 >Bread:<span id="breed"></span></h3>
+        <h3 >Price: <span id="price"></span></h3>
+        <h3 >The owner name:<span id="owner"></span></h3>
+        <h3 >Location:<span id="location"></span></h3>
+        <h3 >Viewed:<span id="viewed"></span></h3>
+        <br>
+        <h2 id="description-h">Description</h2>
+        <p  id="description">They’re floofy, they’re floppy and they’re oh-so sweet! It would be hard to find a person who would say that puppies are not super adorable, but in addition to cuteness, they’re also fascinating.</p>
+      </div>
+    </div>
+  </article>
+
+</section>
+<div id="change_pet_info">
+<!--  here is change info section-->
+</div>
+
+
+<footer>
+  <div class="wrapper">
+    Contact us:
+    <div class="text_link">
+      <a href="https://gmail.com">email@mail.com</a>
+    </div>
+
+  </div>
+  <div class="wrapper">
+    <ul class="social-icons">
+      <li class="fb">
+        <a href="https://facebook.com">
+          <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+      </li>
+      <li class="ig">
+        <a href="https://instagram.com">
+          <i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </li>
+      <li class="tw">
+        <a href="https://twitter.com">
+          <i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+
+
+<!----jscript home-link--------->
+<!--<script src="js/index.js"></script> -->
+
+<script src="js/modify-pet-page.js"></script>
+<script src="js/petPage.js"></script>
+<script src="js/logged-in.js"></script>
+<script src="js/serialize.js"></script>
+</body>
+</html>
