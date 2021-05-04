@@ -46,7 +46,7 @@ const updateUser = async (id, req) => {
     //     [req.body.firstname, req.body.lastname, req.body.email_address, req.body.password, req.body.phone_number, req.body.picture, req.body.address, id]);
 
     const [rows] = await promisePool.query('UPDATE REGISTER_USER SET password = ? WHERE user_ID = ?;',
-    [req.body.password, id]);
+        [req.body.password, id]);
 
     console.log('userModel update:', rows);
 

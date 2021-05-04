@@ -20,7 +20,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
                     <a>Category</a>
-                    <select class="dropdown-content" onChange="test(this);">
+                    <select class="dropdown-content" onChange="categoryFun(this);">
                         <option value="" class="all-pets" id="all-pets" ><a href="">All</a></option>
                         <option value="cat" class="cats" id="cat"><a href="">Cats</a></option>
                         <option value="dog" class="dogs"  id="dog"><a href="">Dogs</a></option>
@@ -33,11 +33,7 @@
             </ul>
         </div>
         <div class="nav-right">
-            <ul class="header-btns">
-                <li class="up-btn"><a href="adpage.html">Post an Ade</a></li>
-                <li class="in-btn" id="show-login"><a href="#">Log In</a></li>
-            </ul>
-
+<!--here is js code depending if logged in or not-->
         </div>
         </div>
     </nav>
@@ -114,6 +110,6 @@
 
 <!----jscript home-link--------->
 <script src="js/index.js"></script>
-
+<script src="js/logged-in.js"></script>
 </body>
 </html>

@@ -33,7 +33,7 @@ const user_update = async (req, res) => {
   console.log("req.body", req.body);
 
   const updateOk = await userModel.updateUser(req.params.id, req);
- // res.json(`updated... ${updateOk}`);
+  // res.json(`updated... ${updateOk}`);
 
   res.json(updateOk)
 };

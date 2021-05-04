@@ -1,5 +1,5 @@
 const url = 'http://localhost:3000'; // change url when uploading to server
-
+// const logged-in = logged-in.js
 const grid = document.querySelector('.grid-col1');
 const createPetCards = (pets) => {
 
@@ -40,9 +40,9 @@ const createPetCards = (pets) => {
     viewButton.className="viewButton";
     //routing to the details page through the viewButton
 
-    viewButton.addEventListener("click", function(){
-      document.location.href = 'pet-page.html?id='+ pet.pet_id;
+    viewButton.addEventListener("click", evt=>{
 
+      document.location.href = 'pet-page.html?id='+ pet.pet_id;
 
     });
 
@@ -56,28 +56,28 @@ const createPetCards = (pets) => {
 };
 
 //the start for category dropdown menu(dogs,cats, all)
- window.test = async function(e) {
- if (e.value === 'dog') {
-//pet/${id}
+ window.categoryFun = async (option)=> {
 
-     const response = await fetch(url +`/pet?sort=${e.value}`);
-     console.log(`by category dog `)
-     const pets = await response.json();
-     grid.innerHTML= "";
-     createPetCards(pets);
+   //pet/${id}
 
-   } else if (e.value === 'cat') {
+  if (option.value === 'dog') {
 
-     const response = await fetch(url +`/pet?sort=${e.value}`);
+       const response = await fetch(url + `/pet?sort=${option.value}`);
+       const pets = await response.json();
+       grid.innerHTML= "";
+       createPetCards(pets);
+   }  else if (option.value === 'cat') {
+
+     const response = await fetch(url +`/pet?sort=${option.value}`);
      console.log(`by category  cat `)
      const pets = await response.json();
      grid.innerHTML= "";
      createPetCards(pets);
 
    }
-   else if (e.value === '') {
+   else if (option.value === '') {
 
-     const response = await fetch(url +`/pet?sort=${e.value}`);
+     const response = await fetch(url +`/pet?sort=${option.value}`);
      console.log(`by category dog `)
      const pets = await response.json();
      grid.innerHTML= "";
@@ -91,6 +91,7 @@ const createPetCards = (pets) => {
 const getPet = async  () => {
 
   try{
+
     const response = await fetch(url +`/pet?sort=`);
     console.log(`by category  `)
     const pets = await response.json();
@@ -106,10 +107,12 @@ getPet();
 
 // PopUp login
 
-document.querySelector("#show-login").addEventListener("click",function(){
+document.querySelector("#show-login").addEventListener("click",()=>{
   document.querySelector(".popup").classList.add("active");
 });
-document.querySelector(".popup .close-btn").addEventListener("click",function(){
+document.querySelector(".popup .close-btn").addEventListener("click",()=>{
   document.querySelector(".popup").classList.remove("active");
 });
 
+
+//shows man silhuette icon when logged in

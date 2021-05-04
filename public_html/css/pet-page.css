@@ -21,6 +21,7 @@ section{
 .comment-container{
     order: 3;
     display: flex;
+    flex-direction: column;
     border-radius: 5px;
     padding: 20px;
 }
@@ -77,22 +78,23 @@ label {
     padding-right: 15px;
     font-weight: bold;
 }
-#ade-details-content p{
-    font-family: 'Ubuntu', sans-serif;
-    font-size:x-large;
-    text-align: left;
-    line-height: 1.6;
 
-}
-#ade-details-content header{
-    font-family: 'Ubuntu', sans-serif;
-    font-size: xx-large;
-}
 .pet-details{
+    font-family: 'Ubuntu', sans-serif;
     align-content: space-around;
     padding: 10px;
     text-align: left;
     text-space: 8px;
+    line-height: 1.6;
+}
+.allComments{
+
+}
+.pet-details span{
+    font-weight: lighter;
+    padding: 15px;
+    line-height: 1.6;
+
 }
 .ade-details  ,ul ,li, label{
     text-align: center;
