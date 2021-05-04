@@ -9,11 +9,11 @@ const get_comment_list_by_id = async (req, res) => {
 
 const postCommentByPetId = async (req, res) => {
   console.log('commentController: http post comment with path param', req.params);
-  const commentObj = req.body;
 
-  console.log('comment obg.',commentObj);
 
-  const comment = await commentModel.postComment(commentObj);
+  console.log('comment obg.',req);
+
+  const comment = await commentModel.postComment( req);
   console.log('after await call in commentController')
   res.json(comment);
 };

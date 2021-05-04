@@ -7,6 +7,6 @@ const adeViewsController = require('../controllers/adeViewsController');
 
 router.get('/:id' , adeViewsController.getViewedTimesById);
 router.post('/',adeViewsController.addView);
-router.put('/',adeViewsController.updateView);
+router.put('/:id',adeViewsController.updateView);
 
 module.exports = router;

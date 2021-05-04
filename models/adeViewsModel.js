@@ -23,11 +23,11 @@ const postView =async (viewObj) =>{
     return 0;
   }
 };
-const updateView =async (viewObj) =>{
+const updateView =async (viewObj,id) =>{
   try {
 
-    const [rows] = await promisePool.execute('UPDATE PET_VIEWING SET viewed=? WHERE pet_id=?',
-        [viewObj.body.viewed, viewObj.body.pet_id]);
+    const [rows] = await promisePool.execute('UPDATE PET_VIEWING SET viewed=?,pet_id=? WHERE viewed_id=?',
+        [viewObj.body.viewed, viewObj.body.pet_id, id]);
 
     console.log(' view Model after update one view :', rows);
     return rows.affectedRows === 1;

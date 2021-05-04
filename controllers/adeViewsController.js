@@ -25,7 +25,7 @@ const updateView = async ( res, req) => {
   }
 
   try{
-    console.log('update number of pet viewing times', req.body);
+    console.log('update number of pet viewing times', );
     const updated = await adeViewsModel.updateView(req.params.id, req);
     res.send('update ok: ',updated);
 

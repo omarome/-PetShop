@@ -8,12 +8,11 @@ const createPetDetails = (pet) => {
     const price = document.querySelector('#price');
     const breed = document.querySelector('#breed');
     const description = document.querySelector('#description');
-    const location = document.querySelector('#location');
+
     expandedImg.src = pet.picture;
     title.innerText = pet.title;
     price.innerText= pet.price;
     breed.innerText = pet.breed;
-    location.innerText = pet.user_id;
     description.innerText = pet.description;
 
 };
