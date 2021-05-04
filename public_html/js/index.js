@@ -41,8 +41,8 @@ const createPetCards = (pets) => {
     //routing to the details page through the viewButton
 
     viewButton.addEventListener("click", evt=>{
-      document.location.href = 'pet-page.html?id='+ pet.pet_id;
 
+      document.location.href = 'pet-page.html?id='+ pet.pet_id;
 
     });
 
@@ -57,16 +57,16 @@ const createPetCards = (pets) => {
 
 //the start for category dropdown menu(dogs,cats, all)
  window.categoryFun = async (option)=> {
- if (option.value === 'dog') {
-//pet/${id}
 
-     const response = await fetch(url +`/pet?sort=${option.value}`);
-     console.log(`by category dog `)
-     const pets = await response.json();
-     grid.innerHTML= "";
-     createPetCards(pets);
+   //pet/${id}
 
-   } else if (option.value === 'cat') {
+  if (option.value === 'dog') {
+
+       const response = await fetch(url + `/pet?sort=${option.value}`);
+       const pets = await response.json();
+       grid.innerHTML= "";
+       createPetCards(pets);
+   }  else if (option.value === 'cat') {
 
      const response = await fetch(url +`/pet?sort=${option.value}`);
      console.log(`by category  cat `)
@@ -91,6 +91,7 @@ const createPetCards = (pets) => {
 const getPet = async  () => {
 
   try{
+
     const response = await fetch(url +`/pet?sort=`);
     console.log(`by category  `)
     const pets = await response.json();

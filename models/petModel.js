@@ -68,8 +68,6 @@ const getAllUserPets = async (id) => {
   }
 };
 
-
-
 module.exports = {
   getAllPets,
   getAllPetsSorted,
