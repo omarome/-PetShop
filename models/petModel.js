@@ -21,6 +21,16 @@ const getAllPetsSorted = async (order) => {
     console.error('error', e.message);
   }
 };
+const getPetsByPrice = async (price) => {
+  try {
+    const [rows] = await promisePool.query('SELECT * FROM USER_PET WHERE PRICE = ?', [price]);
+    return rows;
+  } catch (e) {
+    console.error('error', e.message);
+  }
+};
+
+
 const getPet = async (id) => {
   try {
     console.log('petModel getPet', id);
@@ -76,4 +86,5 @@ module.exports = {
   insertPet,
   petUpdate,
   getAllUserPets,
+  getPetsByPrice,
 };

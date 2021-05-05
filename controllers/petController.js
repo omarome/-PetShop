@@ -9,12 +9,16 @@ const pet_list_get = async (req, res) => {
     const sortPets = await petModel.getAllPetsSorted(req.query.sort);
     res.json(sortPets);
     return;
+  } else if(req.query.sort) {
+    const filterPets = await petModel.getPetsByPrice(req.query.sort);
+    res.json(filterPets);
+    return;
   }
-
   const pets = await petModel.getAllPets();
   console.log(pets);
   res.json(pets);
 };
+
 
 const pet_get_by_id = async (req, res) => {
   console.log('petController: http get pet with path param', req.params);

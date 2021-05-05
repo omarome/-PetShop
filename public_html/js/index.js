@@ -104,6 +104,33 @@ const getPet = async  () => {
 getPet();
 
 
+// Price slider start
+const slideValue = document.querySelector(".first_stp");
+const inputSlider = document.querySelector(".range_val");
+inputSlider.oninput = (() => {
+  let value = inputSlider.value;
+  slideValue.textContent = value;
+
+  window.filterByPrice = async (price)=> {
+    price.value = value;
+
+    if (price.value <= 'price') {
+
+      const response = await fetch(url + `/pet?sort=${price.value}`);
+      const pets = await response.json();
+      grid.innerHTML = "";
+      createPetCards(pets);
+    } else {
+      console.log("not found");
+    }
+  }
+
+  // exports.items = function(){
+  //   return list.sort(function(a, b) {
+  //     return a.price - b.price;
+  //   })
+  // };
+});
 
 // PopUp login
 
