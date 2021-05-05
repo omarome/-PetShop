@@ -36,10 +36,15 @@
             <ul class="header-btns">
                 <li class="up-btn"><a href="adpage.html">Post an Ade</a></li>
                 <li class="in-btn" id="show-login"><a href="#">Log In</a></li>
+                <li id="log-out" style="display: none;">
+                    <p id="user-info"> </p>
+                    <button class="light-border">Log out</button>
+                </li>
             </ul>
 
         </div>
         </div>
+
     </nav>
 
 </header>
@@ -95,10 +100,10 @@
 
     <div class="overlay"></div>
 
-    <div class="popup">
+    <div class="popup" id="login-wrapper" >
         <div class="close-btn">&times;</div>
+        <h3>Login</h3>
         <form id="login-form" class="pop-light-border">
-            <h3>Login</h3>
             <div class="form-element">
                 <span class="fa fa-user"></span>
                 <label>Username:</label>
@@ -124,8 +129,9 @@
 
 </div>
 
+
 <!----jscript home-link--------->
 <script src="js/index.js"></script>
-
+<script src="js/serialize.js"></script>
 </body>
 </html>

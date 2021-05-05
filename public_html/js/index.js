@@ -133,11 +133,72 @@ inputSlider.oninput = (() => {
 });
 
 // PopUp login
+const loginForm = document.querySelector('#login-form');
+const loginWrapper = document.querySelector('#login-wrapper');
 
 document.querySelector("#show-login").addEventListener("click",()=>{
   document.querySelector(".popup").classList.add("active");
+
+  loginForm.addEventListener('submit', async (evt) => {
+    evt.preventDefault();
+    const data = serializeJson(loginForm);
+    const fetchOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+
+    const response = await fetch(url + '/auth/login', fetchOptions);
+    const json = await response.json();
+    console.log('login response', json);
+    if (!json.user) {
+      alert(json.message);
+    } else {
+      // save token
+      sessionStorage.setItem('token', json.token);
+      // show/hide forms + cats
+      loginWrapper.style.display = 'none';
+      logOut.style.display = 'block';
+
+      userInfo.innerHTML = `Hello ${json.user.name}`;
+      //getCat();
+      ///getUsers();
+    }
+  });
+
 });
 document.querySelector(".popup .close-btn").addEventListener("click",()=>{
   document.querySelector(".popup").classList.remove("active");
 });
+
+// logout
+const logOut = document.querySelector('#log-out');
+const userInfo = document.querySelector('#user-info');
+
+logOut.addEventListener('click', async (evt) => {
+  evt.preventDefault();
+  try {
+    const options = {
+      headers: {
+        'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+      },
+    };
+    const response = await fetch(url + '/auth/logout', options);
+    const json = await response.json();
+    console.log(json);
+    // remove token
+    sessionStorage.removeItem('token');
+    alert('You have logged out');
+    // show/hide forms + cats
+    loginWrapper.style.display = 'flex';
+    logOut.style.display = 'none';
+    //main.style.display = 'block';
+  }
+  catch (e) {
+    console.log(e.message);
+  }
+});
+
 

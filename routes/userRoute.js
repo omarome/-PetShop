@@ -6,8 +6,8 @@ const { body } = require('express-validator');
 router.route('/')
   .get(userController.user_list_get)
   .post(
-    body('firstname').isLength({min: 3}).escape().blacklist('=,?,;,&,+,*'),
-    body('lastname').isLength({min: 3}).escape().blacklist('=,?,;,&,+,*'),
+    body('firstname').isLength({min: 3}).escape().blacklist('=,?,;,&,+,*,_,-'),
+    body('lastname').isLength({min: 3}).escape().blacklist('=,?,;,&,+,*,_,-'),
     body('phone').isNumeric,
     body('address').isLength({min: 3}),
     body('username').isEmail(),

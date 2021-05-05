@@ -94,10 +94,10 @@ if (!Array.prototype.reduce) {
 
 // main function
 function serializeJson (form, protected = false) {
-  var data = {}, form_arr = [];
+  let data = {}, form_arr = [];
   // export to array
   if(typeof HTMLFormElement === "function" && form instanceof HTMLFormElement) {
-    for(var i in form.elements) {
+    for(let i in form.elements) {
       if(form.elements[i] instanceof HTMLInputElement ||
           form.elements[i] instanceof HTMLSelectElement ||
           form.elements[i] instanceof HTMLTextAreaElement)
@@ -110,20 +110,20 @@ function serializeJson (form, protected = false) {
 
   // serialize to json
   data = form_arr.reduce(function (r, o) {
-    var s = r, arr = o.name.split('.');
+    let s = r, arr = o.name.split('.');
     arr.forEach((n, k) => {
-      var ck = n.replace(/\[[0-9]*\]$/, "");
+      let ck = n.replace(/\[[0-9]*\]$/, "");
       if (!s.hasOwnProperty(ck))
         s[ck] = (new RegExp("\[[0-9]*\]$").test(n)) ? [] : {};
       if (s[ck] instanceof Array) {
-        var i = parseInt((n.match(new RegExp("([0-9]+)\]$")) || []).pop(), 10);
+        let i = parseInt((n.match(new RegExp("([0-9]+)\]$")) || []).pop(), 10);
         i = isNaN(i) ? s[ck].length : i;
         s[ck][i] = s[ck][i] || {};
         if(k === arr.length - 1) {
           if(protected && JSON.stringify({}) !== JSON.stringify(s[ck][i])) {
 
             while(s[ck][i] !== undefined) {
-              var tmp = s[ck][i];
+              let tmp = s[ck][i];
               s[ck][i] = o.value;
               o.value = tmp;
               i++;
