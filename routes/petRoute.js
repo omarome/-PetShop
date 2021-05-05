@@ -34,6 +34,6 @@ router.post('/',
     upload.single('pet'),
     testFile,
     petController.pet_create);
-router.put('/',petController.pet_update);
+router.put('/:id',petController.pet_update);
 
 module.exports = router;

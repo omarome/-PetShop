@@ -130,7 +130,7 @@ change_password.addEventListener('submit', async (evt) => {
   evt.preventDefault();
   const data = serializeJson(change_password);
   const fetchOptions = {
-    method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },      //'Content-Type': 'application/x-www-form-urlencoded',

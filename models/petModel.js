@@ -57,11 +57,33 @@ const insertPet = async (petObj) => {
   }
 };
 
-const petUpdate = async (pet) => {
-  const [row] = await promisePool.execute('UPDATE USER_PET SET `title`=?, `birthdate`=?, `breed`=?, `price`=?. `picture`=?, `description`=?, `pet_vst`=?, `user_id`=?, `pet_category_id`=? WHERE PET_ID=?', [pet.title, pet.birthdate, pet.breed, pet.price, pet.picture, pet.description, pet.pet_vst, pet.user_id, pet.category_id]);
-  console.log('update row', row);
-  return row.insertId;
+// const petUpdate = async (id, pet) => {
+//   // const [row] = await promisePool.execute('UPDATE USER_PET SET `title`=?, `birthdate`=?, `breed`=?, `price`=?. `picture`=?, `description`=?, `pet_vst`=?, `user_id`=?, `pet_category_id`=? WHERE PET_ID=?',
+//   //     [pet.title, pet.birthdate, pet.breed, pet.price, pet.picture, pet.description, pet.pet_vst, pet.user_id, pet.category_id]);
+//   console.log("id", typeof id);
+//
+//   const [row] = await promisePool.execute('UPDATE USER_PET SET `title`=?, `birthdate`=?, `breed`=? WHERE PET_ID=?',
+//       [pet.title, pet.birthdate, pet.breed, id]);
+//   console.log('update row', row);
+//   return row.insertId;
+// };
+
+const petUpdate = async (id, req) => {
+  try {
+    // console.log("id", typeof id, id);
+    // console.log("request1", req.body)
+    // const [rows] = await promisePool.query('UPDATE REGISTER_USER SET firstname = ?, lastname = ?, email_address = ?, password = ?, phone_number = ?, picture = ?, address = ? WHERE user_ID = ?;',
+    //     [req.body.firstname, req.body.lastname, req.body.email_address, req.body.password, req.body.phone_number, req.body.picture, req.body.address, id]);
+    const [rows] = await promisePool.execute('UPDATE USER_PET SET `title`=?, `breed`=?, `price`=?, `description`=? WHERE PET_ID=?',
+       [req.body.title, req.body.breed, req.body.price, req.body.description,id]);
+    console.log('petmodel update:', rows);
+    return rows.affectedRows === 1
+  } catch (e) {
+    console.log("error", e)
+    return false;
+  }
 };
+
 
 const getAllUserPets = async (id) => {
   try {

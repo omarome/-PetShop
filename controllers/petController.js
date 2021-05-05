@@ -33,7 +33,8 @@ const pet_create = async (req, res) => {
 };
 const pet_update = async (req, res) => {
   const updateOk = await petModel.petUpdate(req.params.id, req);
-  res.send(`updated... ${updateOk}`);
+  // res.send(`updated... ${updateOk}`);
+  res.json(updateOk);
 };
 
 const pet_delete = async (req, res) => {
