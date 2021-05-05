@@ -1,3 +1,28 @@
+.banner {
+    background-image: url("../img/banner2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 260px;
+}
+
+#change_password{
+    display: flex;
+    flex-direction: column;
+}
+.middle_page{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffb48f;
+    margin: 0 2.5%;
+    padding: 0 2%;
+    border-radius: 8px;
+}
+.profile_img{
+    padding: 50px;
+}
+
+
 #change_password{
     display: flex;
     flex-direction: column;

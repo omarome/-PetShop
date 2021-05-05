@@ -26,7 +26,8 @@ body {
 
 header {
     border-style: outset;
-    background-color: #7fffd4;
+    background-color:  #17ede0;
+;
     justify-content: space-between;
     align-items: center;
     height: 110px;
@@ -230,7 +231,59 @@ h1 {
 .search-container {
     padding:  10px 10px 0 0;
 }
+/* here is the style of filter */
 
+.range {
+    margin-top: 20px;
+    width: 240px;
+    background: #a0cfd5;
+    border-radius: 5px;
+}
+
+.range .field {
+    position: relative;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.range .field .value {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.range .field .value.left {
+    left: 5%;
+    top: 100%;
+}
+
+.range .field .value.right {
+    right: 5%;
+    top: 100%;
+}
+
+.range .field input {
+    -webkit-appearance: none;
+    height: 8px;
+    width: 90%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.range .field input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 17px;
+    width: 17px;
+    background-color: #f5f6dc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* here the filter ends  */
+/* here the filter ends  */
 
 figure {
     border-radius: 6px;

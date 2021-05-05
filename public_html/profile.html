@@ -51,6 +51,7 @@
     </nav>
 
 </header>
+<section class="banner"></section>
 
 <section class="middle_page">
 
@@ -96,11 +97,38 @@
         </ul>
     </div>
 </footer>
+<!-- PopUp -->
+
+<div class="modal">
+
+    <div class="overlay"></div>
+
+    <div class="popup">
+        <div class="close-btn">&times;</div>
+
+        <div class="form-wrapper">
+            <h3>Modify cat</h3>
+            <form id="mod-cat-form" class="light-border">
+                <input class="light-border" type="text" name="name" placeholder="Name" required>
+                <input class="light-border" type="number" name="age" placeholder="Age" required>
+                <input class="light-border" type="number" step="0.1" name="weight" placeholder="Weight" required>
+                <select class="light-border add-owner" name="owner" required>
+                    <option value="">Select owner</option>
+                </select>
+                <input type="hidden" name="id">
+                <button class="light-border" type="submit">Save changes</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
 
 
 
 
 <!----jscript home-link--------->
+<script src="js/serialize.js"></script>
 <script src="js/profile.js"></script>
 
 </body>
