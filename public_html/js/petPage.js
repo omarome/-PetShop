@@ -51,6 +51,7 @@ const createViewedCount = (views) =>{
   });
 };
 
+
 //routing images views by click in the pet details page
  const routingImagesFun=(imgs)=> {
   const expandImg = document.getElementById("expandedImg");
@@ -69,11 +70,20 @@ const getParameterByName = (name, url = window.location.href) => {
 
 const id= getParameterByName('id');
 //alert(id)
+
+const postComment=(id)=>{
+  //const petId= document.querySelector('#sub-With-pet-id');
+
+//  const input= document.
+
+  return id;
+}
+postComment(id);
+
 const increaseViews = async (views,id)=>{
   try{
      // fetch insert route and pass id and views as paramiter
 
-    fetch(url+`/views/?${(views+1)&id}`);
 
   }
   catch (e){

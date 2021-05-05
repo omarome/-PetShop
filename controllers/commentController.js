@@ -1,6 +1,6 @@
 'use strict';
 const commentModel = require('../models/commentModel');
-
+const {validationResult} = require('express-validator');
 const get_comment_list_by_id = async (req, res) => {
   console.log('commentController: http get comment with path param', req.params);
   const comments = await commentModel.getCommentListByPetId(req.params.id);
@@ -8,14 +8,15 @@ const get_comment_list_by_id = async (req, res) => {
 };
 
 const postCommentByPetId = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   console.log('commentController: http post comment with path param', req.params);
 
-
-  console.log('comment obg.',req);
-
-  const comment = await commentModel.postComment( req);
+  const comment = await commentModel.postComment(req);
   console.log('after await call in commentController')
-  res.json(comment);
+  res.send(comment);
 };
 
 

@@ -28,6 +28,10 @@ const user_get_by_id = async (req, res) => {
   res.json(user);
 }
 const user_update = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
 
   console.log("req.params", req.params.id);
   console.log("req.body", req.body);
@@ -37,6 +41,16 @@ const user_update = async (req, res) => {
 
   res.json(updateOk)
 };
+const user_delete = async (req, res) => {
+  // Finds the validation errors in this request and wraps them in an object with handy functions
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+  console.log('delete user', req.params.id);
+  const success = await userModel.deleteUser(req.params.id);
+  res.send(`user deleted ${success}`);
+};
 
 
 
@@ -45,4 +59,5 @@ module.exports = {
   user_create_post,
   user_get_by_id,
   user_update,
+  user_delete,
 };

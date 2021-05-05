@@ -1,6 +1,7 @@
 
 'use strict';
 const petModel = require('../models/petModel');
+const {  validationResult } = require('express-validator');
 
 const pet_list_get = async (req, res) => {
   console.log('get all pets from controller', req.query);
@@ -22,21 +23,35 @@ const pet_get_by_id = async (req, res) => {
 };
 
 const pet_create = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   console.log('petController pet_create', req.body, req.body);
   const petOpj= req.body;
   petOpj.filename= req.file.filename;
   //petOpj.user_id = req.user.user_id;
   //petOpj.user_id = 1;
-  const id = await petModel.insertPet(petOpj);
-  const pet = await petModel.getPet(id);
-  res.send(pet);
-};
+  const pet = await petModel.insertPet(petOpj);
+
+  res.json(pet);
+}
 const pet_update = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   const updateOk = await petModel.petUpdate(req.params.id, req);
   res.send(`updated... ${updateOk}`);
 };
 
 const pet_delete = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   const deleteOk = await petModel.deletePet(req.params.id);
   res.json(deleteOk);
 };

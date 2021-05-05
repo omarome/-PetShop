@@ -20,13 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="446ac757-9843-4c42-9ef0-615bb0fd3a4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/authController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/authModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/localhost.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/pass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/production.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/adeViewsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/adeViewsController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/commentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/commentController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/adeViewsModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/adeViewsModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/commentModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/commentModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/petController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/petController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/petModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/petModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/userModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/userModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/petPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/petPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/pet-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pet-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/adeViewsRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/adeViewsRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/authRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/commentRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/commentRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/petRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/petRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/userRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/userRoute.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,20 +71,21 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public_html/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ourLastProject/project" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\web_project\project\utils" />
+      <recent name="C:\web_project\project\public_html\js" />
+      <recent name="C:\web_project\project\public_html" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\web_project\project" />
       <recent name="C:\web_project\project\public_html" />
       <recent name="C:\web_project\project\media" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\web_project\project\public_html\js" />
-      <recent name="C:\web_project\project\public_html" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -88,7 +104,9 @@
       <workItem from="1619762669503" duration="26013000" />
       <workItem from="1619857866580" duration="37379000" />
       <workItem from="1619940862692" duration="28595000" />
-      <workItem from="1620037780836" duration="39577000" />
+      <workItem from="1620037780836" duration="42894000" />
+      <workItem from="1620136765300" duration="20550000" />
+      <workItem from="1620199048509" duration="5777000" />
     </task>
     <servers />
   </component>
@@ -112,14 +130,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="743" y="256" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619611214085" />
-    <state x="1154" y="251" key="FileChooserDialogImpl" timestamp="1618928788401">
+    <state x="1154" y="251" key="FileChooserDialogImpl" timestamp="1620199559866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1154" y="251" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1618928788401" />
-    <state x="331" y="0" width="758" height="802" key="dock-window-1" timestamp="1620057196182">
+    <state x="1154" y="251" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620199559866" />
+    <state x="271" y="1" width="612" height="763" key="dock-window-1" timestamp="1620138952547">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="331" y="0" width="758" height="802" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1620057196182" />
+    <state x="271" y="1" width="612" height="763" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1620138952547" />
     <state x="946" y="263" key="run.anything.popup" timestamp="1619859769189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

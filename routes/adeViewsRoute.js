@@ -4,9 +4,10 @@ const express = require('express');
 const router = express.Router();
 const adeViewsController = require('../controllers/adeViewsController');
 
-
-router.get('/:id' , adeViewsController.getViewedTimesById);
+router.route('/:id')
+  .get( adeViewsController.getViewedTimesById)
+  .put(adeViewsController.updateView);
 router.post('/',adeViewsController.addView);
-router.put('/:id',adeViewsController.updateView);
+
 
 module.exports = router;

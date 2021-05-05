@@ -54,7 +54,7 @@ const insertPet = async (petObj) => {
   }
 };
 const petUpdate = async (pet) => {
-  const [row] = await promisePool.execute('UPDATE USER_PET SET `title`=?, `birthdate`=?, `breed`=?, `price`=?. `picture`=?, `description`=?, `pet_vst`=?, `user_id`=?, `pet_category_id`=? WHERE PET_ID=?', [pet.title, pet.birthdate, pet.breed, pet.price, pet.picture, pet.description, pet.pet_vst, pet.user_id, pet.category_id]);
+  const [row] = await promisePool.execute('UPDATE USER_PET SET `title`=?, `birthdate`=?, `breed`=?, `price`=?. `picture`=?, `description`=?, `pet_vst`=?, `user_id`=?, `pet_category_id`=? WHERE pet_id=?', [pet.title, pet.birthdate, pet.breed, pet.price, pet.picture, pet.description, pet.pet_vst, pet.user_id, pet.category_id, pet.pet_id]);
   console.log('update row', row);
   return row.insertId;
 };

@@ -15,7 +15,8 @@ const getAllUsers = async () => {
 
 const addUser = async (req) => {
   try {
-    const [rows] = await promisePool.execute('INSERT INTO REGISTER_USER (firstname, email_address, password) VALUES (?, ?, ?);',
+    const [rows] = await promisePool.execute(
+        'INSERT INTO REGISTER_USER (firstname, email_address, password) VALUES (?, ?, ?);',
         [req.body.firstname, req.body.email_address, req.body.password]);
     console.log('userModel insert:', rows);
     return rows.insertId;
@@ -59,9 +60,30 @@ const updateUser = async (id, req) => {
     return false;
   }
 };
+
+const deleteUser = async (id) => {
+  const [row] = await promisePool.execute(
+      'DELETE FROM `REGISTER_USER` WHERE `user_id`= ?', [id]);
+  console.log('deleted row', row)
+};
+const getUserLogin = async (params) => {
+  try {
+    console.log(params);
+    const [rows] = await promisePool.execute(
+        'SELECT * FROM REGISTER_USER WHERE email_address = ?;',
+        params);
+    return rows;
+  } catch (e) {
+    console.log('error', e.message);
+  }
+};
+
+
 module.exports = {
   getAllUsers,
   addUser,
   getUserById,
   updateUser,
+  deleteUser,
+  getUserLogin,
 };

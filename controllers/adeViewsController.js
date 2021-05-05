@@ -1,6 +1,5 @@
 'use strict';
 const adeViewsModel = require('../models/adeViewsModel');
-const {  validationResult } = require('express-validator');
 
 const getViewedTimesById = async (req, res) => {
   console.log('ade Views Controller: http get viewed times with path param', req.params);
@@ -19,10 +18,8 @@ const addView = async (req, res) => {
   }
 };
 const updateView = async ( res, req) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
+
+
 
   try{
     console.log('update number of pet viewing times', );
