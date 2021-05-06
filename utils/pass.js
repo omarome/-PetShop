@@ -1,8 +1,10 @@
 'use strict';
 const passport = require('passport');
+const bcrypt = require('bcryptjs');
 const Strategy = require('passport-local').Strategy;
 const userModel = require('../models/userModel');
 const passportJWT = require('passport-jwt');
+const authModel = require('../models/authModel');
 const JWTStrategy = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
 
@@ -11,14 +13,15 @@ passport.use(new Strategy(
     async (username, password, done) => {
       const params = [username];
       try {
-        const [user] = await userModel.getUserLogin(params);
-        console.log('Local strategy', user); // result is binary row
+        const [user] = await authModel.getUserLogin(params);
+       // console.log('Local strategy', user); // result is binary row
         if (user === undefined) {
           return done(null, false, {message: 'Incorrect credentials.'});
         }
-        if (user.password !== password) {
+        if(!bcrypt.compare(password, user.password)) {
           return done(null, false, {message: 'Incorrect credentials.'});
         }
+
         delete user.password; // poista salasana
         return done(null, {...user}, {message: 'Logged In Successfully'}); // use spread syntax to create shallow copy to get rid of binary row type
       } catch (err) {
@@ -26,10 +29,9 @@ passport.use(new Strategy(
       }
     }));
 
-// TODO: JWT strategy for handling bearer token
 passport.use(new JWTStrategy({
       jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-      secretOrKey: 'gfdrtfyui987654rtyuio8765ewwertyu',
+      secretOrKey: 'nbfgfhttdrjjulkbgdskk66e43g6v',
     },
     async (jwtPayload, done) => {
 
@@ -38,7 +40,6 @@ passport.use(new JWTStrategy({
         const user = await userModel.getUserById(jwtPayload.user_id);
         return done(null, user);
       } catch (err) {
-
         return done(err);
       }
     },

@@ -1,5 +1,6 @@
-const url = 'http://localhost:3000'; // change url when uploading to server
+const url = 'https://localhost:8000'; // change url when uploading to server
 
+const postAdeBtn = document.querySelector('#post-ade-btn').childNodes[0];
 const grid = document.querySelector('.grid-col1');
 const createPetCards = (pets) => {
 
@@ -92,7 +93,9 @@ const getPet = async  () => {
 
   try{
 
-    const response = await fetch(url +`/pet?sort=`);
+
+
+    const response = await fetch(url +`/pet`);
     console.log(`by category  `)
     const pets = await response.json();
     createPetCards(pets);
@@ -132,44 +135,50 @@ inputSlider.oninput = (() => {
   // };
 });
 
+
+
 // PopUp login
+const loginBtn= document.querySelector('#show-login');
+
 const loginForm = document.querySelector('#login-form');
 const loginWrapper = document.querySelector('#login-wrapper');
 
 document.querySelector("#show-login").addEventListener("click",()=>{
   document.querySelector(".popup").classList.add("active");
+});
+//login
+loginForm.addEventListener('submit', async (evt) => {
+  evt.preventDefault();
+  const data = serializeJson(loginForm);
+  const fetchOptions = {
+    method: 'POST',
 
-  loginForm.addEventListener('submit', async (evt) => {
-    evt.preventDefault();
-    const data = serializeJson(loginForm);
-    const fetchOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    };
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+    },
+    body: JSON.stringify(data),
+  };
 
-    const response = await fetch(url + '/auth/login', fetchOptions);
-    const json = await response.json();
-    console.log('login response', json);
-    if (!json.user) {
-      alert(json.message);
-    } else {
-      // save token
-      sessionStorage.setItem('token', json.token);
-      // show/hide forms + cats
-      loginWrapper.style.display = 'none';
-      logOut.style.display = 'block';
-
-      userInfo.innerHTML = `Hello ${json.user.name}`;
-      //getCat();
-      ///getUsers();
-    }
-  });
-
+  const response = await fetch(url + '/auth/login', fetchOptions);
+  const json = await response.json();
+  console.log('login response', json);
+  if (!json.user) {
+    alert(json.message);
+  } else {
+    // save token
+    sessionStorage.setItem('token', json.token);
+    // show/hide forms + cats
+    //loginWrapper.style.display = 'none';
+    logOut.style.display = 'block';
+    loginBtn.style.display='none';
+    userInfo.innerHTML = `Hello ${json.user.firstname}`;
+  }
 });
 document.querySelector(".popup .close-btn").addEventListener("click",()=>{
+  document.querySelector(".popup").classList.remove("active");
+});
+document.querySelector(".popup #submit-btn").addEventListener("click",()=>{
   document.querySelector(".popup").classList.remove("active");
 });
 
@@ -191,14 +200,39 @@ logOut.addEventListener('click', async (evt) => {
     // remove token
     sessionStorage.removeItem('token');
     alert('You have logged out');
-    // show/hide forms + cats
+    // show/hide forms
+    loginBtn.style.display='block';
     loginWrapper.style.display = 'flex';
     logOut.style.display = 'none';
-    //main.style.display = 'block';
+
+
   }
   catch (e) {
     console.log(e.message);
   }
 });
 
+if(sessionStorage.getItem('token')){
+  logOut.style.display = 'block';
+  loginBtn.style.display='none';
 
+
+}else{
+
+  loginBtn.style.display='block';
+  logOut.style.display='none';
+
+
+}
+
+postAdeBtn.addEventListener('click', evt=>{
+  if(sessionStorage.getItem('token')){
+    postAdeBtn.setAttribute("href","adpage.html");
+  }
+  else {
+
+    alert(' log in first ')
+
+  }
+
+})

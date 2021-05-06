@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300&family=Ubuntu:wght@300;400;500&display=swap');
 
-/*
+/* Fonts
 font-family: 'Nunito Sans', sans-serif;
 font-family: 'Ubuntu', sans-serif;
  */
@@ -20,32 +20,41 @@ body {
     background-image: url("../img/bg-01.png");
     background-repeat: no-repeat;
     background-position: center;
+}
 
+h1 {
+    font-size: 24px;
 }
 /* here start the header */
 
 header {
     border-style: outset;
-    background-color:  #17ede0;
-;
+    background-color: #17ede0;
     justify-content: space-between;
     align-items: center;
-    height: 110px;
+    height: 100px;
+    padding: .5% 2% 0 2%;
 }
+
+.logo-img img{
+    width: 74px;
+}
+
+.fa-paw {
+    padding: 0 5px 0 5px;
+}
+
 /* here start the search */
 section{
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-
 }
 .search-container{
-align-items: flex-end;
-
+    align-items: flex-end;
 }
 .search-container button {
-
     margin-right: 10px;
     background: white;
     font-size: 17px;
@@ -53,6 +62,7 @@ align-items: flex-end;
     cursor: pointer;
 }
 input[type=text] {
+    width: 210px;
     padding: 6px;
     font-size: 12px;
     border-style: inset;
@@ -68,7 +78,6 @@ input[type=text] {
 
 .main-nav :hover{
     color: #626161;
-
 }
 
 /* here start the logo and title */
@@ -78,7 +87,6 @@ input[type=text] {
 }
 .page-title {
     font-size: 20px;
-
 }
 
 .logo-img img {
@@ -95,12 +103,10 @@ input[type=text] {
 /* here  the navigation left side ends */
 /* here start the navigation right side */
 .nav-right{
-
     display: flex;
     align-items: center;
     justify-content:space-between;
 }
-
 
 .main-nav li {
     text-transform: uppercase;
@@ -117,7 +123,6 @@ input[type=text] {
     background-color: #40e0d0;
 }
 
-
 .in-btn> a:hover {
     background-color: aquamarine;
 }
@@ -125,7 +130,6 @@ input[type=text] {
 .up-btn> a:hover {
     background-color: aquamarine;
 }
-
 
 .header-btns li{
     text-transform: uppercase;
@@ -164,7 +168,7 @@ input[type=text] {
     display: none;
     border-radius: 6px;
     position: absolute;
-    background-color: aquamarine;
+    background-color: #17ede0;
     min-width: 90px;
     box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
     z-index: 1;
@@ -196,7 +200,6 @@ input[type=text] {
 /* header ends here*/
 
 .container {
-
     align-items: center;
     display: flex;
     flex-wrap: wrap;
@@ -222,7 +225,6 @@ h1 {
 .grid-col1 {
     display: flex;
     flex-wrap: wrap;
-
 }
 .grid-col2 {
     /* display: flex; */
@@ -283,16 +285,15 @@ h1 {
     cursor: pointer;
 }
 /* here the filter ends  */
-/* here the filter ends  */
 
 figure {
     border-radius: 6px;
-    box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
     margin: 0 1em 2em 0;
     width: 240px;
     text-align: center;
     box-sizing: border-box;
-    background-color: beige;
+    background-color: #f5e6cc;
 }
 
 figure h2 {
@@ -312,9 +313,9 @@ footer {
     margin-top: auto;
 }
 footer .nav {
-    /*max-width: 1024px;*/
-    /*margin: 0 auto;*/
-    padding: 20px;
+/max-width: 1024px;/
+/margin: 0 auto;/
+padding: 20px;
     color: white;
 }
 
@@ -341,15 +342,13 @@ footer .nav {
     color: #c32aa3;
 }
 
-
-/* PopUp */
+/* PopUp  START*/
 .popup {
-    position: absolute;
+    position: fixed;
     top: -150%;
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.25);
-
     padding: 20px 30px;
     background-color: #a0cfd5;
     box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
@@ -361,8 +360,8 @@ footer .nav {
 
 .popup.active {
     top: 50%;
-    width: 380px;
     opacity: 1;
+    width: 380px;
     transform: translate(-50%,-50%) scale(1);
     transition: top 0ms ease-in-out 0ms,
     opacity 200ms ease-in-out 0ms,
@@ -449,7 +448,7 @@ footer .nav {
     font-weight:600;
 }
 
-/* PopUp */
+/* PopUp  END */
 
 /* Register page START */
 
@@ -493,6 +492,25 @@ footer .nav {
     margin: 0 10px 15px 10px;
 }
 
+.light-border input {
+    height: 38px;
+}
+
+.fname-desc .light-border {
+    resize: none;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+#reg-user-form select {
+    height: 34px;
+    width: 86px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding-left: 5px;
+    margin-bottom: 16px;
+}
+
 .light-btn{
     display: flex;
     justify-content: center;
@@ -525,35 +543,35 @@ footer .nav {
         display: inline-flex;
         align-items: center;
     }
-    .nav-left{
+    .nav-left {
         display: flex;
         order:2;
     }
-    .nav{
+    .nav {
         padding: 0;
         display: flex;
         flex-wrap: wrap;
     }
-    .nav-right{
+    .nav-right {
         align-items: self-end;
         justify-content: space-between;
         order: 1;
     }
-   section{
-       display: flex;
-       flex-wrap: wrap;
-       flex-direction: column;
-       align-items: center;
-   }
-   article{
-       flex-wrap: wrap;
-       flex-direction: column;
-       align-items: center;
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    article {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
 
-   }
-   ul.main-nav{
+    }
+    ul.main-nav {
 
-   }
+    }
     .grid-col1 {
         align-items: center;
         display: flex;

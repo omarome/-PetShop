@@ -19,14 +19,6 @@
         <div class="nav-left">
             <ul class="main-nav">
                 <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a>Category</a>
-                    <ul class="dropdown-content">
-                        <li><a href="./.html">All</a></li>
-                        <li><a href="./.html">Cats</a></li>
-                        <li><a href="./.html">Dogs</a></li>
-                    </ul>
-                </li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="about.html">Contact Us</a></li>
 
@@ -37,6 +29,10 @@
             <ul class="header-btns">
                 <li class="up-btn"><a href="#">Post an Ade</a></li>
                 <li class="in-btn" id="show-login"><a href="#">Log In</a></li>
+                <li id="log-out" style="display: none;">
+                    <p id="user-info"> </p>
+                    <button class="light-border">Log out</button>
+                </li>
             </ul>
 
         </div>
@@ -48,23 +44,7 @@
     <article id="ad">
         <div id="card">
 
-            <div class="img-row">
-                <div class="img-column">
-                    <img src="./img/pic1.png" alt="cat"
-                         onclick="routingImagesFun(this);">
-                </div>
-                <div class="img-column">
-                    <img src="./img/pic2.png" alt="cat"
-                         onclick="routingImagesFun(this);">
-                </div>
-                <div class="img-column">
-                    <img src="./img/pic3.png" alt="cat"
-                         onclick="routingImagesFun(this);">
-                </div>
-            </div>
-
             <div class="images-container">
-                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
                 <img src="./img/pic2.png" alt="cat" id="expandedImg" style="width:100%">
             </div>
 
@@ -154,16 +134,17 @@
 
 
 
+
 <!-- PopUp -->
 
 <div class="modal">
 
     <div class="overlay"></div>
 
-    <div class="popup">
+    <div class="popup" id="login-wrapper" >
         <div class="close-btn">&times;</div>
+        <h3>Login</h3>
         <form id="login-form" class="pop-light-border">
-            <h3>Login</h3>
             <div class="form-element">
                 <span class="fa fa-user"></span>
                 <label>Username:</label>
@@ -179,20 +160,19 @@
                 <label for="remember-me">Remember me</label>
             </div>
             <div class="form-element">
-                <button class="light-border light-btn" type="submit">Log In</button>
+                <button class="light-border light-btn" id="login-submit-btn" type="submit">Log In</button>
             </div>
             <div class="form-element">
                 <a href="register.html">Sign Up</a>
             </div>
         </form>
     </div>
-
 </div>
-
 
 <!----jscript home-link--------->
 <!--<script src="js/index.js"></script> -->
-
+<script src="js/serialize.js"></script>
 <script src="js/petPage.js"></script>
+
 </body>
 </html>

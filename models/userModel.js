@@ -29,7 +29,7 @@ const addUser = async (req) => {
 const getUserById = async (id) => {
   try {
     console.log('userModel getUser', id);
-    const [rows] = await promisePool.execute('SELECT * FROM REGISTER_USER WHERE user_ID = ?', [id]);
+    const [rows] = await promisePool.execute('SELECT * FROM REGISTER_USER WHERE user_id = ?', [id]);
     return rows[0];
   } catch (e) {
     console.error('userModel:', e.message);
@@ -59,17 +59,6 @@ const deleteUser = async (id) => {
       'DELETE FROM `REGISTER_USER` WHERE `user_id`= ?', [id]);
   console.log('deleted row', row)
 };
-const getUserLogin = async (params) => {
-  try {
-    console.log(params);
-    const [rows] = await promisePool.execute(
-        'SELECT * FROM REGISTER_USER WHERE email_address = ?;',
-        params);
-    return rows;
-  } catch (e) {
-    console.log('error', e.message);
-  }
-};
 
 
 module.exports = {
@@ -78,5 +67,4 @@ module.exports = {
   getUserById,
   updateUser,
   deleteUser,
-  getUserLogin,
 };

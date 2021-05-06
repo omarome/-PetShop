@@ -1,7 +1,8 @@
 'use strict';
 const url = 'http://localhost:3000'; // change url when uploading to server
 
-const grid = document.querySelector('.grid-col1');
+const modForm = document.querySelector('#mod-pet-form');
+const grid = document.querySelector('.your-pets');
 
 const createPetCards = (pets) => {
 
@@ -23,13 +24,12 @@ const createPetCards = (pets) => {
     const h3 = document.createElement('h3');
     h3.innerText = pet.breed;
 
-    // view button
-    const viewButton = document.createElement('button');
+
     const deleteButton = document.createElement('button');
     //delete pet
     deleteButton.innerHTML = 'Delete';
     deleteButton.addEventListener('click', async () => {
-      var result = confirm("Are you sure you want delete this item permanently?");
+      let result = confirm("Are you sure you want delete this item permanently?");
       if (result) {
         const fetchOptions = {
           method: 'DELETE',
@@ -51,12 +51,16 @@ const createPetCards = (pets) => {
       }
     });
 
+    // redirect to pet page
+    img.addEventListener("click", evt=>{
+      document.location.href = 'pet-page.html?id='+ pet.pet_id;
+    });
 
-    viewButton.innerText = 'view pet';
-    viewButton.style.textTransform = 'uppercase';
-    viewButton.style.padding = '8px 24px';
-    viewButton.style.marginLeft = '10px';
-    viewButton.style.marginBottom = '15px';
+    modifButton.innerText = 'modify';
+    modifButton.style.textTransform = 'uppercase';
+    modifButton.style.padding = '8px 24px';
+    modifButton.style.marginLeft = '10px';
+    modifButton.style.marginBottom = '15px';
 
     deleteButton.style.textTransform = 'uppercase';
     deleteButton.style.padding = '8px 24px';
@@ -68,7 +72,7 @@ const createPetCards = (pets) => {
     figure.appendChild(h3);
     figure.appendChild(price);
     // figure.appendChild(p);
-    figure.appendChild(viewButton);
+    figure.appendChild(modifButton);
     figure.appendChild(deleteButton);
 
     //main.appendChild(article);
@@ -77,6 +81,7 @@ const createPetCards = (pets) => {
 };
 //add profile information
 const profile = (personInfo) => {
+
   const profile_info = document.querySelector('.profile_info ');
   profile_info.innerHTML +=
       `<h3>First name: ${personInfo.firstname}</h3>
@@ -86,12 +91,10 @@ const profile = (personInfo) => {
     <h3>Address: ${personInfo.address}</h3>`;
 
   const img = document.querySelector('.profile_img');
-  img.innerHTML += `<img src="${personInfo.PICTURE}" alt="Profile_picture">`
+  img.innerHTML += `<img src="${personInfo.picture}" alt="Profile_picture">`
 }
 
 const addForm = document.querySelector('#password_two');
-
-// AJAX calls
 
 const getPet = async (user_id) => {
   try {
@@ -103,7 +106,7 @@ const getPet = async (user_id) => {
     console.log(e.message);
   }
 };
-getPet(1);
+getPet(2);
 
 const getUser = async (id) => {
   try {
@@ -115,4 +118,71 @@ const getUser = async (id) => {
     console.log(e.message);
   }
 };
-getUser(1)
+getUser(2)
+
+
+change_password.addEventListener('submit', async (evt) => {
+  evt.preventDefault();
+  const data = serializeJson(change_password);
+  const fetchOptions = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },      //'Content-Type': 'application/x-www-form-urlencoded',
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  };
+  const response = await fetch(url + '/user/1', fetchOptions);
+  const json = await response.json();
+  console.log('modify response', json);
+  location.reload();
+  alert('Password changed');
+
+});
+
+// Pop Up
+// document.querySelector("#show-modify ").addEventListener("click",()=>{
+//   document.querySelector(".popup").classList.add("active");
+// });
+
+
+// modify button
+const modifButton = document.createElement('button');
+
+// redirect to pet page
+modifButton.addEventListener("click",()=>{
+  document.querySelector(".popup-modify").classList.add("active");
+});
+
+document.querySelector(".popup-modify .close-btn").addEventListener("click",()=>{
+  document.querySelector(".popup-modify").classList.remove("active");
+});
+
+
+// submit modify form
+modForm.addEventListener('submit', async (evt) => {
+  evt.preventDefault();
+  const data = serializeJson(modForm);
+  const fetchOptions = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+    },
+    body: JSON.stringify(data),
+  };
+
+  console.log(fetchOptions);
+  const response = await fetch(url + '/pet', fetchOptions);
+  const json = await response.json();
+  console.log('modify response', json);
+  getPet();
+});
+
+// when app starts, check if token exists and hide login form, show logout button and main content, get cats and users
+if (sessionStorage.getItem('token')) {
+  loginWrapper.style.display = 'none';
+  logOut.style.display = 'block';
+  main.style.display = 'block';
+  getPet();
+  getUser();
+}

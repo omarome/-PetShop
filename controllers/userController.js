@@ -9,7 +9,7 @@ const user_list_get = async (req, res) => {
   res.json(users);
 };
 
-const user_create_post = async (req, res) => {
+const user_create_post = async (req, res,next) => {
 
   // Finds the validation errors in this request and wraps them in an object with handy functions
   const errors = validationResult(req);
@@ -28,7 +28,7 @@ const user_create_post = async (req, res) => {
   user.password = bcrypt.hashSync(req.body.password, salt);
   console.log('userController user_create after hashing?', req.body,user);
 
-  const id = await userModel.insertUser(user);
+  const id = await userModel.addUser(user);
   if(id > 0){
     next();
   }else {

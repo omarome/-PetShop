@@ -18,14 +18,6 @@
         <div class="nav-left">
             <ul class="main-nav">
                 <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a>Category</a>
-                    <ul class="dropdown-content">
-                        <li><a href="./.html">All</a></li>
-                        <li><a href="./.html">Cats</a></li>
-                        <li><a href="./.html">Dogs</a></li>
-                    </ul>
-                </li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="about.html">Contact Us</a></li>
 
@@ -33,8 +25,10 @@
         </div>
         <div class="nav-right">
             <ul class="header-btns">
-                <li class="up-btn"><a href="#">Selling</a></li>
-                <li class="in-btn"><a href="register.html">Sign In</a></li>
+                <li id="log-out" >
+                    <p id="user-info"> </p>
+                    <li class="light-border" id="back-btn"><a href="index.html"> Back-> </a></li>
+                </li>
             </ul>
 
         </div>
@@ -52,36 +46,48 @@
                 <form class="light-border" id="reg-user-form" action="../pet" method="post" enctype="multipart/form-data">
                     <h1>Post an Advert</h1>
 
-                    <div class="form-element">
+                    <div class="fname">
                         <label>Title: </label>
-                        <input type="text" name="title" placeholder="Title"><br>
+                        <input class="light-border" type="name" name="title" placeholder="Title">
                     </div>
 
-                    <div class="form-element">
+                    <div class="fname">
                         <label>Birthdate: </label>
-                        <input type="date" name="birthdate"><br>
+                        <input class="light-border" type="date" name="birthdate" placeholder="Date">
                     </div>
 
-                    <label>Breed: </label>
-                    <input type="text" name="breed"><br>
+                    <div class="fname">
+                        <label>Breed: </label>
+                        <input class="light-border" type="text" name="breed" placeholder="Breed">
+                    </div>
 
-                    <label>Price: </label>
-                    <input type="text" name="price"><br>
-                    <label>Image: </label>
-                    <input type="file" name="pet"><br>
-                    <label>Description: </label>
-                    <input type="text" name="description"><br>
-                    <label>(!)vst: </label>
-                    <input type="date" name="pet_vst">
-                    <label>(!)user_id: </label>
-                    <input type="number" name="user_id"><br>
-                    <label for="pet_category">Choose a Category</label>
-                    <select name="pet_category_id" type="number" id="pet_category">
+                    <div class="fname">
+                        <label>Price: </label>
+                        <input class="light-border" type="text" name="price" placeholder="Price $">
+                    </div>
+
+                    <div class="fname">
+                        <label>Image: </label>
+                        <input class="light-border" type="file" name="pet">
+                    </div>
+
+                    <div class="fname-desc">
+                        <label>Description: </label>
+                        <textarea class="light-border" type="text" name="description" cols="77" rows="6"></textarea>
+                    </div>
+
+                                     <label>(!)user_id: </label>
+                                       <input type="number" value="1" name="user_id"><br>
+                    <label for="pet_category">Choose a Category:</label>
+                    <select  name="pet_category_id" type="number" id="pet_category">
                         <option value="1">Cat</option>
                         <option value="2">Dog</option>
-                    </select><br>
-                    <br>
-                    <input type="submit">
+                        <option value="3">Fish</option>
+                        <option value="4">Rabbits</option>
+                        <option value="5">Birds</option>
+                    </select>
+
+                    <button class="light-border light-btn" type="submit" id="send-btn">Submit</button>
 
                 </form>
 
@@ -111,7 +117,6 @@
         </ul>
     </div>
 </footer>
-
-<script src="js/adpage.js"></script>
+<script src="js/adPage.js"></script>
 </body>
 </html>
