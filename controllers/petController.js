@@ -32,6 +32,9 @@ const pet_create = async (req, res) => {
   res.send(pet);
 };
 const pet_update = async (req, res) => {
+
+  console.log("req.body-12512", req.body);
+  console.log("req.filee-12512", req.file);
   const updateOk = await petModel.petUpdate(req.params.id, req);
   // res.send(`updated... ${updateOk}`);
   res.json(updateOk);

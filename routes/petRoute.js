@@ -6,6 +6,9 @@ const router = express.Router();
 const petController = require('../controllers/petController');
 
 const fileFilter = (req,file,cb) => {
+
+  console.log("rqe.file", file);
+
   if(file.mimetype === 'image/jpeg' ||
       file.mimetype === 'image/png' ||
       file.mimetype === 'image/gif' ){
@@ -34,6 +37,17 @@ router.post('/',
     upload.single('pet'),
     testFile,
     petController.pet_create);
-router.put('/:id',petController.pet_update);
+// router.put('/:id',petController.pet_update);
+
+router.put("/:id", upload.single("pet"),   [
+
+      //check('image').custom(diaryController.image_file_validator),
+      //check('things').custom(catController.cat_file_validator), // cat_file_validator checks only req.file
+    ],
+    (req, res) => {
+      console.log('tiedosto: ', req.file)
+      petController.pet_update(req, res)
+    }
+)
 
 module.exports = router;

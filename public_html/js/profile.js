@@ -110,7 +110,7 @@ const getPet = async (user_id) => {
     console.log(e.message);
   }
 };
-getPet(1);
+getPet(3);
 
 const getUser = async (id) => {
   try {

@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Pet Details Page</title>
+
+  <link rel="stylesheet" href="css/modify-pet-page.css">
   <link rel="stylesheet" href="css/logged-in.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pet-page.css">
@@ -45,53 +47,9 @@
   </nav>
 
 </header>
-<section>
-  <article id="ad">
-    <div id="card">
 
-      <div class="img-row">
-        <div class="img-column">
-          <img src="./img/pic1.png" alt="cat"
-               onclick="routingImagesFun(this);">
-        </div>
-        <div class="img-column">
-          <img src="./img/pic2.png" alt="cat"
-               onclick="routingImagesFun(this);">
-        </div>
-        <div class="img-column">
-          <img src="./img/pic3.png" alt="cat"
-               onclick="routingImagesFun(this);">
-        </div>
-      </div>
-
-      <div class="images-container">
-        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-        <img src="./img/pic2.png" alt="cat" id="expandedImg" style="width:100%">
-      </div>
-
-    </div>
-
-  </article>
-  <article id="ade-details">
-    <div id="ade-content">
-      <h1 > Pet for sell</h1>
-      <div class="pet-details">
-        <h1 >Title: <span id="title"> </span></h1>
-        <h3 >Bread:<span id="breed"></span></h3>
-        <h3 >Price: <span id="price"></span></h3>
-        <h3 >The owner name:<span id="owner"></span></h3>
-        <h3 >Location:<span id="location"></span></h3>
-        <h3 >Viewed:<span id="viewed"></span></h3>
-        <br>
-        <h2 id="description-h">Description</h2>
-        <p  id="description">They’re floofy, they’re floppy and they’re oh-so sweet! It would be hard to find a person who would say that puppies are not super adorable, but in addition to cuteness, they’re also fascinating.</p>
-      </div>
-    </div>
-  </article>
-
-</section>
 <div id="change_pet_info">
-  <form id = change_pet_info_form enctype="multipart/form-data">
+  <form id="change_pet_info_form" enctype="multipart/form-data">
   </form>
 <!--  here is change info section-->
 </div>

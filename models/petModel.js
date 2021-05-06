@@ -51,7 +51,7 @@ const insertPet = async (petObj) => {
 
     console.log('petModel insert:', rows);
     return rows.insertId;
-  } catch (e) {
+  } catch (e) {F
     console.error('petModel insertPet:', e);
     return 0;
   }
@@ -71,11 +71,11 @@ const insertPet = async (petObj) => {
 const petUpdate = async (id, req) => {
   try {
     // console.log("id", typeof id, id);
-    // console.log("request1", req.body)
+    // console.log("request", req.body)
     // const [rows] = await promisePool.query('UPDATE REGISTER_USER SET firstname = ?, lastname = ?, email_address = ?, password = ?, phone_number = ?, picture = ?, address = ? WHERE user_ID = ?;',
     //     [req.body.firstname, req.body.lastname, req.body.email_address, req.body.password, req.body.phone_number, req.body.picture, req.body.address, id]);
-    const [rows] = await promisePool.execute('UPDATE USER_PET SET `title`=?, `breed`=?, `price`=?, `description`=? WHERE PET_ID=?',
-       [req.body.title, req.body.breed, req.body.price, req.body.description,id]);
+    const [rows] = await promisePool.execute('UPDATE USER_PET SET `title`=?, `birthdate`=?, `breed`=?, `price`=?, `description`=?, `picture` = ? WHERE PET_ID=?',
+       [req.body.title, req.body.birthdate, req.body.breed, req.body.price, req.body.description, req.file.filename, id]);
     console.log('petmodel update:', rows);
     return rows.affectedRows === 1
   } catch (e) {

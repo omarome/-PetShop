@@ -1,0 +1,10 @@
+#change_pet_info{
+    padding-top: 50px;
+    max-width: 300px;
+    align-self: center;
+}
+
+#change_pet_info_form{
+    display: flex;
+    flex-direction: column;
+}

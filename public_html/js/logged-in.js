@@ -1,4 +1,4 @@
-let isLoggedIn = true
+let isLoggedIn = false
 const nav_right = document.querySelector('.nav-right');
 if(isLoggedIn === true) {
   nav_right.innerHTML = `<ul class="header-btns">
