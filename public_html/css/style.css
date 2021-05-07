@@ -135,7 +135,21 @@ input[type=text] {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
 }
+.logout-container{
+    display: inline-flex;
+}
+.logout-btn{
+    background-color: #c4b76f;
+    display: block;
+    border-radius: 6px;
+    padding: 5px;
+    font-weight: bold;
 
+}
+.logout-container>p{
+    font-size: small;
+    font-weight: bold;
+}
 /* Mobail menu END */
 
 /* here start the navigation left side */
@@ -176,6 +190,7 @@ input[type=text] {
 }
 
 .header-btns li{
+    padding: 7px;
     text-transform: uppercase;
     display: inline-block;
     list-style: none;
@@ -189,7 +204,9 @@ input[type=text] {
     color: black;
     font-weight: 600;
 }
-
+.logout-btn:hover {
+    background-color: aquamarine;
+}
 .header-btns {
     flex-direction: column;
     justify-content: space-between;
@@ -679,5 +696,23 @@ padding: 20px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+    }
+    .logout-container{
+        display: inline-flex;
+    }
+    .logout-btn{
+        background-color: #c4b76f;
+        display: block;
+        border-radius: 6px;
+        padding: 5px;
+        font-weight: bold;
+
+    }
+    .logout-container>p{
+        font-size: small;
+        font-weight: bold;
+    }
+    .logout-btn:hover {
+        background-color: aquamarine;
     }
 }

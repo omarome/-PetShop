@@ -163,7 +163,7 @@ loginForm.addEventListener('submit', async (evt) => {
     // show/hide forms
     logOut.style.display = 'block';
     loginBtn.style.display='none';
-    userInfo.innerHTML = `Hello ${json.user.firstname}`;
+    userInfo.innerHTML = `Welcome ${json.user.firstname}`;
   }
 });
 document.querySelector(".popup .close-btn").addEventListener("click",()=>{
