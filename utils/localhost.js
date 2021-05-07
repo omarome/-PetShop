@@ -9,6 +9,7 @@ const sslcert = fs.readFileSync('ssl-cert.pem')
 const options = {
   key: sslkey,
   cert: sslcert
+
 };
 
 const httpsRedirect = (req, res) => {
