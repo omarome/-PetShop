@@ -49,7 +49,7 @@ if (!Array.prototype.reduce) {
       // 2. Let len be ? ToLength(? Get(O, "length")).
       var len = o.length >>> 0;
 
-      // Steps 3, 4, 5, 6, 7
+      // Steps 3, 4, 5, 6, 7      
       var k = 0;
       var value;
 
@@ -82,7 +82,7 @@ if (!Array.prototype.reduce) {
           value = callback(value, o[k], k, o);
         }
 
-        // d. Increase k by 1.
+        // d. Increase k by 1.      
         k++;
       }
 

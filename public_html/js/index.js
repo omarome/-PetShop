@@ -54,35 +54,35 @@ const createPetCards = (pets) => {
 };
 
 //the start for category dropdown menu(dogs,cats, all)
-window.categoryFun = async (option)=> {
+ window.categoryFun = async (option)=> {
 
-  //pet/${id}
+   //pet/${id}
 
   if (option.value === 'dog') {
 
-    const response = await fetch(url + `/pet?sort=${option.value}`);
-    const pets = await response.json();
-    grid.innerHTML= "";
-    createPetCards(pets);
-  }  else if (option.value === 'cat') {
+       const response = await fetch(url + `/pet?sort=${option.value}`);
+       const pets = await response.json();
+       grid.innerHTML= "";
+       createPetCards(pets);
+   }  else if (option.value === 'cat') {
 
-    const response = await fetch(url +`/pet?sort=${option.value}`);
-    console.log(`by category  cat `)
-    const pets = await response.json();
-    grid.innerHTML= "";
-    createPetCards(pets);
+     const response = await fetch(url +`/pet?sort=${option.value}`);
+     console.log(`by category  cat `)
+     const pets = await response.json();
+     grid.innerHTML= "";
+     createPetCards(pets);
 
-  }
-  else if (option.value === '') {
+   }
+   else if (option.value === '') {
 
-    const response = await fetch(url +`/pet?sort=${option.value}`);
-    console.log(`by category dog `)
-    const pets = await response.json();
-    grid.innerHTML= "";
-    createPetCards(pets);
+     const response = await fetch(url +`/pet?sort=${option.value}`);
+     console.log(`by category dog `)
+     const pets = await response.json();
+     grid.innerHTML= "";
+     createPetCards(pets);
 
-  }
-}
+   }
+ }
 // the code ends  for category dropdown menu(dogs,cats, all) here
 
 // AJAX call
@@ -163,7 +163,7 @@ loginForm.addEventListener('submit', async (evt) => {
     // show/hide forms
     logOut.style.display = 'block';
     loginBtn.style.display='none';
-    userInfo.innerHTML = `Hello ${json.user.firstname}`;
+    userInfo.innerHTML = `Welcome ${json.user.firstname}`;
   }
 });
 document.querySelector(".popup .close-btn").addEventListener("click",()=>{

@@ -2,9 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ad Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
+<header>
+    <!-- add header here -->
+    <div class="nav">
+        <div class="logo-title">
+            <div class="page-title"><h3>PetShop</h3></div>
+            <div class="logo-img"><img src="img/PetShopLogo.png"></div>
+        </div>
+        <div class="nav-left">
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Contact Us</a></li>
+
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul class="header-btns">
+                <li id="log-out" >
+                    <p id="user-info"> </p>
+                    <li class="light-border" id="back-btn"><a href="index.html"> Back-> </a></li>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</header>
+
+<section>
+    <article class="container">
+
+        <div class="form">
+
+            <div class="form-wrapper">
+
+                <form class="light-border" id="add-pet-form"   enctype="multipart/form-data">
+                    <h1>Post an Advert</h1>
+
+                    <div class="fname">
+                        <label>Title: </label>
+                        <input class="light-border" type="text" name="title" placeholder="Title">
+                    </div>
+
+                    <div class="fname">
+                        <label>Birthdate: </label>
+                        <input class="light-border" type="date" name="birthdate" placeholder="Date">
+                    </div>
+
+                    <div class="fname">
+                        <label>Breed: </label>
+                        <input class="light-border" type="text" name="breed" placeholder="Breed">
+                    </div>
+
+                    <div class="fname">
+                        <label>Price: </label>
+                        <input class="light-border" type="text" name="price" placeholder="Price $">
+                    </div>
+
+                    <div class="fname">
+                        <label>Image: </label>
+                        <input class="light-border" type="file" name="pet">
+                    </div>
+
+                    <div class="fname-desc">
+                        <label>Description: </label>
+                        <textarea class="light-border" type="text" name="description" cols="77" rows="6"></textarea>
+                    </div>
+
+                                     <label>(!)user_id: </label>
+                                        <input type="number"  name="user_id"><br>
+                    <label for="pet_category">Choose a Category:</label>
+                    <select  name="pet_category_id" type="number" id="pet_category">
+                        <option value="1">Cat</option>
+                        <option value="2">Dog</option>
+                        <option value="3">Fish</option>
+                        <option value="4">Rabbits</option>
+                        <option value="5">Birds</option>
+                    </select>
+
+                    <button class="light-border light-btn" type="submit" id="add-pet-btn">Submit</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </article>
+</section>
+<footer>
+    <div class="nav">
+        Contact us: 0440XXXXXXX
+    </div>
+    <div class="nav">
+        Contact us: email@mail.com
+    </div>
+    <div class="nav">
+        <ul class="social-icons">
+            <li class="fb">
+                <i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+            <li class="ig">
+                <i class="fa fa-instagram" aria-hidden="true"></i></li>
+            <li class="tw">
+                <i class="fa fa-twitter-square" aria-hidden="true"></i></li>
+        </ul>
+    </div>
+</footer>
+<script src="js/addPetPage.js"></script>
+<script src="js/mobMenu.js"></script>
 </body>
 </html>

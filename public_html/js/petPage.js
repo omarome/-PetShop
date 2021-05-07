@@ -7,17 +7,17 @@ const petIdCommForm= document.querySelector('#pet-id-form');
 
 const createPetDetails = (pet) => {
 
-  const title = document.querySelector('#title');
-  const expandedImg = document.querySelector('#expandedImg');
-  const price = document.querySelector('#price');
-  const breed = document.querySelector('#breed');
-  const description = document.querySelector('#description');
+    const title = document.querySelector('#title');
+    const expandedImg = document.querySelector('#expandedImg');
+    const price = document.querySelector('#price');
+    const breed = document.querySelector('#breed');
+    const description = document.querySelector('#description');
 
-  expandedImg.src = pet.picture;
-  title.innerText = pet.title;
-  price.innerText= pet.price;
-  breed.innerText = pet.breed;
-  description.innerText = pet.description;
+    expandedImg.src = pet.picture;
+    title.innerText = pet.title;
+    price.innerText= pet.price;
+    breed.innerText = pet.breed;
+    description.innerText = pet.description;
 
 };
 // to print the pet owner name and address
@@ -33,20 +33,20 @@ const createOwner = (user) =>{
 // to print all comments belong to this pet
 const allPetComments= (comments) => {
   const allComments = document.querySelector('#all-comments');
-  comments.forEach((petComment) =>{
+comments.forEach((petComment) =>{
 
-    const fullName = document.createElement('h1');
-    const email=document.createElement('p');
-    const comment=document.createElement('p');
+  const fullName = document.createElement('h1');
+  const email=document.createElement('p');
+  const comment=document.createElement('p');
 
-    fullName.innerText = `${petComment.comment_owner_firstname}  ${petComment.comment_owner_lastname} commented on this post` ;
-    email.innerText =`Email: ${petComment.comment_owner_email}`;
-    comment.innerText = `Comment: ${petComment.comment}`;
+  fullName.innerText = `${petComment.comment_owner_firstname}  ${petComment.comment_owner_lastname} commented on this post` ;
+  email.innerText =`Email: ${petComment.comment_owner_email}`;
+  comment.innerText = `Comment: ${petComment.comment}`;
 
-    allComments.appendChild(fullName);
-    allComments.appendChild(email);
-    allComments.appendChild(comment);
-  })};
+  allComments.appendChild(fullName);
+  allComments.appendChild(email);
+  allComments.appendChild(comment);
+})};
 // to print how many times this ade has been viewed
 const createViewedCount = (views) =>{
   const viewedTimes = document.querySelector('#viewed');
