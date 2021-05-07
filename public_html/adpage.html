@@ -43,12 +43,12 @@
 
             <div class="form-wrapper">
 
-                <form class="light-border" id="reg-user-form" action="../pet" method="post" enctype="multipart/form-data">
+                <form class="light-border" id="add-pet-form"   enctype="multipart/form-data">
                     <h1>Post an Advert</h1>
 
                     <div class="fname">
                         <label>Title: </label>
-                        <input class="light-border" type="name" name="title" placeholder="Title">
+                        <input class="light-border" type="text" name="title" placeholder="Title">
                     </div>
 
                     <div class="fname">
@@ -77,7 +77,7 @@
                     </div>
 
                                      <label>(!)user_id: </label>
-                                       <input type="number" value="1" name="user_id"><br>
+                                        <input type="number"  name="user_id"><br>
                     <label for="pet_category">Choose a Category:</label>
                     <select  name="pet_category_id" type="number" id="pet_category">
                         <option value="1">Cat</option>
@@ -87,7 +87,7 @@
                         <option value="5">Birds</option>
                     </select>
 
-                    <button class="light-border light-btn" type="submit" id="send-btn">Submit</button>
+                    <button class="light-border light-btn" type="submit" id="add-pet-btn">Submit</button>
 
                 </form>
 
@@ -97,8 +97,6 @@
 
     </article>
 </section>
-
-
 <footer>
     <div class="nav">
         Contact us: 0440XXXXXXX
@@ -117,6 +115,6 @@
         </ul>
     </div>
 </footer>
-<script src="js/adPage.js"></script>
+<script src="js/addPetPage.js"></script>
 </body>
 </html>

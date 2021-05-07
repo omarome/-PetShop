@@ -5,6 +5,7 @@ const { body } = require('express-validator');
 const router = express.Router();
 const multer  = require('multer');
 const petController = require('../controllers/petController');
+const passport = require('../utils/pass');
 
 const fileFilter = (req,file,cb) => {
   if(file.mimetype === 'image/jpeg' ||
@@ -31,7 +32,7 @@ router.get('/' , petController.pet_list_get);
 
 router.get('/user/:id', petController.pet_get_by_user_id);
 
-router.post('/',
+router.post('/',passport.authenticate('jwt', {session: false}),
     upload.single('pet'),
     testFile,
     body('title').isLength({min: 1}).escape().blacklist('?, =, ;'),
@@ -39,7 +40,7 @@ router.post('/',
     body('breed').isLength({min: 1}),
     body('price').isLength({min: 1}),
     body('description').isLength({min:10}),
-    //body('user_id').isNumeric,
+   // body('user_id').isNumeric,
    // body('pet_category_id').isNumeric,
     petController.pet_create);
 router.route('/:id')

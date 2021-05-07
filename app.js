@@ -1,9 +1,7 @@
 'use strict';
 const express = require('express'); // import express from 'express';
 const app = express();
-const cors = require('cors');
 const passport = require('./utils/pass');
-const bodyParser = require('body-parser');
 const petRoute = require('./routes/petRoute');
 const userRoute = require('./routes/userRoute');
 const commentRoute= require('./routes/commentRoute');
@@ -18,14 +16,7 @@ if (process.env.NODE_ENV === 'production') {
   require('./utils/localhost')(app, process.env.HTTPS_PORT|| 8000,port);
 }
 
-//app.use(cors);
-/*const loggedIn = (req, res, next) => {
-  if (req.user) {
-    next();
-  } else {
-    res.redirect('/form');
-  }
-};*/
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));  // For parsing application/x-www-form-urlencoded
 app.use(express.static('public_html'))

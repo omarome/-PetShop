@@ -8,6 +8,7 @@ const { body } = require('express-validator');
 
 router.get('/:id' , commentController.get_comment_list_by_id);
 router.post('/',
+    body('pet_id').isNumeric,
     body('firstname').isLength({min: 1}).escape().blacklist(';,?,=,+,*'),
     body('lastname').isLength({min: 1}).escape().blacklist(';,?,=,+,*'),
     body('email').isEmail,

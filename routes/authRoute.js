@@ -8,9 +8,10 @@ const { body } = require('express-validator');
 router.post('/login', authController.login);
 
 router.post('/register',
-    body('firstname').isLength({min: 3}).escape().blacklist('=,?,;,&,+,*,_,-'),
-    body('lastname').isLength({min: 3}).escape().blacklist('=,?,;,&,+,*,_,-'),
+    body('firstname').isLength({min: 3}).escape().blacklist('=,?,;,&,+,*'),
+    body('lastname').isLength({min: 3}).escape().blacklist('=,?,;,&,+,*'),
     body('address').isLength({min: 5}),
+    body('phone'),
     body('username').isEmail(),
     body('password').matches('(?=.*[A-Z]).{8,}'),
     userController.user_create_post,

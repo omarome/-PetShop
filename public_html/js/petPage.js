@@ -1,6 +1,10 @@
 "use strict";
 const url = 'https://localhost:8000';  // change url when uploading to server
 
+const addCommentForm = document.querySelector('#comment-form');
+const addCommSubBtn= document.querySelector('#comm-submit-btn');
+const petIdCommForm= document.querySelector('#pet-id-form');
+
 const createPetDetails = (pet) => {
 
     const title = document.querySelector('#title');
@@ -65,35 +69,22 @@ const id= getParameterByName('id');
 //alert(id)
 
 
-const postComment=(id)=>{
-  //const petId= document.querySelector('#sub-With-pet-id');
-
-//  const input= document.
-
-  return id;
-}
-postComment(id);
-
-const increaseViews = async (views,id)=>{
-  try{
-     // fetch insert route and pass id and views as paramiter
-
-
-  }
-  catch (e){
-
-  }
-}
 // AJAX call
 const getPetById = async  (id) => {
 
-  try{
+  try {
+    const options = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+      },
+    };
 
     const petResponse = await fetch(url+`/pet/${id}`);
     const pet = await petResponse.json();
     createPetDetails(pet);
 
-    const userResponse = await fetch(url +`/user/${pet.user_id}`)
+    const userResponse = await fetch(url +`/user/${pet.user_id}`, options);
     const user = await userResponse.json();
     createOwner(user);
 
@@ -101,16 +92,40 @@ const getPetById = async  (id) => {
     const comments = await commentsResponse.json();
     allPetComments(comments);
 
-
     const viewedResponse = await  fetch(url+`/view/${pet.pet_id}`);
     const viewed = await viewedResponse.json();
     createViewedCount(viewed);
+
+
+// submit add comment form/////// a bug/// it doesnt post a comment
+    petIdCommForm.Value= pet.pet_id;
+    addCommSubBtn.addEventListener('submit', async (evt) => {
+
+      evt.preventDefault();
+      let fd = new FormData(addCommentForm);
+
+      const Options = {
+        method: 'POST',
+
+        headers: {
+          'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+
+        },
+        body: fd
+      };
+      const response = await fetch(url + `/comment`, Options);
+      const json = await response.json();
+      console.log('add response', json);
+      alert('Adding comment succeeded');
+
+    });
 
   }
   catch (e) {
     console.log(e.message);
   }
 };
+//submit add comment code ends here
 getPetById(id);
 
 // PopUp login
@@ -146,8 +161,6 @@ loginForm.addEventListener('submit', async (evt) => {
     logOut.style.display = 'block';
 
     userInfo.innerHTML = `Hello ${json.user.firstname}`;
-    //getPat();
-    //getUsers();
   }
 });
 document.querySelector(".popup .close-btn").addEventListener("click",()=>{
@@ -179,7 +192,7 @@ logOut.addEventListener('click', async (evt) => {
     loginWrapper.style.display = 'flex';
     logOut.style.display = 'none';
     loginBtn.style.display='block';
-    //main.style.display = 'block';
+
 
   }
   catch (e) {

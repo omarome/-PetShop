@@ -22,10 +22,6 @@ const createPetCards = (pets) => {
     const h3 = document.createElement('h3');
     h3.innerText = pet.breed;
 
-    //location!?
-    // const p = document.createElement('p');
-    // p.innerText = file.location;
-
     // view button
     const viewButton = document.createElement('button');
     const a= document.createElement('a');
@@ -44,6 +40,7 @@ const createPetCards = (pets) => {
     viewButton.addEventListener("click", evt=>{
 
       document.location.href = 'pet-page.html?id='+ pet.pet_id;
+
 
     });
 
@@ -107,7 +104,7 @@ const getPet = async  () => {
 getPet();
 
 
-// Price slider start
+// Price slider start or filter
 const slideValue = document.querySelector(".first_stp");
 const inputSlider = document.querySelector(".range_val");
 inputSlider.oninput = (() => {
@@ -128,11 +125,6 @@ inputSlider.oninput = (() => {
     }
   }
 
-  // exports.items = function(){
-  //   return list.sort(function(a, b) {
-  //     return a.price - b.price;
-  //   })
-  // };
 });
 
 
@@ -168,8 +160,7 @@ loginForm.addEventListener('submit', async (evt) => {
   } else {
     // save token
     sessionStorage.setItem('token', json.token);
-    // show/hide forms + cats
-    //loginWrapper.style.display = 'none';
+    // show/hide forms
     logOut.style.display = 'block';
     loginBtn.style.display='none';
     userInfo.innerHTML = `Hello ${json.user.firstname}`;
@@ -216,23 +207,20 @@ if(sessionStorage.getItem('token')){
   logOut.style.display = 'block';
   loginBtn.style.display='none';
 
-
 }else{
 
   loginBtn.style.display='block';
   logOut.style.display='none';
-
-
 }
 
-postAdeBtn.addEventListener('click', evt=>{
+postAdeBtn.addEventListener('click', evt => {
   if(sessionStorage.getItem('token')){
     postAdeBtn.setAttribute("href","adpage.html");
+
   }
   else {
 
     alert(' log in first ')
 
   }
-
 })
