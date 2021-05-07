@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Pet Details Page</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/petpage.css">
+    <link rel="stylesheet" href="css/pet-page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -19,14 +19,6 @@
         <div class="nav-left">
             <ul class="main-nav">
                 <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a>Category</a>
-                    <ul class="dropdown-content">
-                        <li><a href="./.html">All</a></li>
-                        <li><a href="./.html">Cats</a></li>
-                        <li><a href="./.html">Dogs</a></li>
-                    </ul>
-                </li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="about.html">Contact Us</a></li>
 
@@ -37,6 +29,10 @@
             <ul class="header-btns">
                 <li class="up-btn"><a href="#">Post an Ade</a></li>
                 <li class="in-btn" id="show-login"><a href="#">Log In</a></li>
+                <li id="log-out" style="display: none;">
+                    <p id="user-info"> </p>
+                    <button class="light-border">Log out</button>
+                </li>
             </ul>
 
         </div>
@@ -48,24 +44,8 @@
     <article id="ad">
         <div id="card">
 
-            <div class="img-row">
-                <div class="img-column">
-                    <img src="./img/pic1.png" alt="cat"
-                         onclick="myFunction(this);">
-                </div>
-                <div class="img-column">
-                    <img src="./img/pic2.png" alt="cat"
-                         onclick="myFunction(this);">
-                </div>
-                <div class="img-column">
-                    <img src="./img/pic3.png" alt="cat"
-                         onclick="myFunction(this);">
-                </div>
-            </div>
-
             <div class="images-container">
-                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-                <img src="./img/pic2.png" alt="cat" id="expandedImg" style="width:100%">
+                <img src="" alt="cat" id="expandedImg" style="width:100%">
             </div>
 
         </div>
@@ -75,12 +55,12 @@
         <div id="ade-content">
             <h1 > Pet for sell</h1>
             <div class="pet-details">
-                <h1 id="Title"> Title</h1>
-                <h3 id="breed">Bread:</h3>
-                <h3 id="price"> Price:</h3>
-                <h3 id="owner"> Owner name:</h3>
-                <h3 id="location"> Location:</h3>
-                <h3 id="viewed"> viewed:</h3>
+                <h1 >Title: <span id="title"> </span></h1>
+                <h3 >Bread:<span id="breed"></span></h3>
+                <h3 >Price: <span id="price"></span></h3>
+                <h3 >The owner name:<span id="owner"></span></h3>
+                <h3 >Location:<span id="location"></span></h3>
+                <h3 >Viewed:<span id="viewed"></span></h3>
                 <br>
                 <h2 id="description-h">Description</h2>
                 <p  id="description">They’re floofy, they’re floppy and they’re oh-so sweet! It would be hard to find a person who would say that puppies are not super adorable, but in addition to cuteness, they’re also fascinating.</p>
@@ -92,26 +72,37 @@
                 </li>
             </ul>
             <button id="submit-btn">Submit</button>
+            <div>
+                <ul class="conversations" id="conversations">
+                </ul>
+            </div>
         </div>
     </article>
 
     <article class="comment-container">
+        <div class="all-comments" id="all-comments">
+            <!--- here comes list of comments -->
+        </div>
+        <br>
         <h3 class="comment-container-h">Leave a comment</h3>
         <br>
         <div >
-            <form action="">
+            <form  enctype="multipart/form-data" id="comment-form">
                 <label for="fname">First Name</label>
                 <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
                 <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                <input  type="text" id="lname" name="lastname" placeholder="Your last name..">
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" placeholder="Your email address..">
 
                 <label for="subject">Subject</label>
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                <textarea  id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-                <input type="submit" value="Submit">
+                <label for="pet-id-form" name="pet_id" disabled="true"  ></label>
+                <input value ="" disabled="disabled" id="pet-id-form" >
+
+                <input type="submit" value="Submit" id="comm-submit-btn" >
             </form>
         </div>
     </article>
@@ -145,16 +136,17 @@
 
 
 
+
 <!-- PopUp -->
 
 <div class="modal">
 
     <div class="overlay"></div>
 
-    <div class="popup">
+    <div class="popup" id="login-wrapper" >
         <div class="close-btn">&times;</div>
+        <h3>Login</h3>
         <form id="login-form" class="pop-light-border">
-            <h3>Login</h3>
             <div class="form-element">
                 <span class="fa fa-user"></span>
                 <label>Username:</label>
@@ -170,20 +162,20 @@
                 <label for="remember-me">Remember me</label>
             </div>
             <div class="form-element">
-                <button class="light-border light-btn" type="submit">Log In</button>
+                <button class="light-border light-btn" id="login-submit-btn" type="submit">Log In</button>
             </div>
             <div class="form-element">
                 <a href="register.html">Sign Up</a>
             </div>
         </form>
     </div>
-
 </div>
 
-
 <!----jscript home-link--------->
-<script src="js/home.js"></script>
+<!--<script src="js/index.js"></script> -->
+<script src="js/serialize.js"></script>
+<script src="js/petPage.js"></script>
+<script src="js/mobMenu.js"></script>
 
-<script src="js/petpage.js"></script>
 </body>
 </html>

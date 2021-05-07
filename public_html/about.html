@@ -2,9 +2,155 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
+<header>
+    <!-- add header here -->
+    <nav class="nav">
+        <div class="logo-title">
+            <div class="page-title"><h3>PetShop</h3></div>
+            <div class="logo-img"><img src="img/PetShopLogo.png"></div>
+        </div>
+
+        <div class="nav-left">
+
+            <div class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="main-nav" id="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a>Category</a>
+                    <select class="dropdown-content" onChange="categoryFun(this);">
+                        <option value="" class="all-pets" id="all-pets" ><a href="">All</a></option>
+                        <option value="cat" class="cats" id="cat"><a href="">Cats</a></option>
+                        <option value="dog" class="dogs"  id="dog"><a href="">Dogs</a></option>
+                        <option value="cat" class="cats" id="fish"><a href="">Fish</a></option>
+                        <option value="dog" class="dogs"  id="rabbits"><a href="">Rabbits</a></option>
+                        <option value="dog" class="dogs"  id="birds"><a href="">Birds</a></option>
+                    </select>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+        </div>
+
+        <div class="nav-right">
+            <ul class="header-btns">
+                <li class="up-btn">
+                    <a href="adpage.html"><i class="fa fa-paw" aria-hidden="true"></i>Post an Ade</a>
+                </li>
+                <li class="in-btn" id="show-login"><a href="#">Log In</a></li>
+
+                <li id="log-out" style="display: none;">
+                    <p id="user-info"> </p>
+                    <button class="light-border">Log out</button>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<section>
+    <article class="container">
+
+        <h1>About Us</h1>
+
+        <div class="abt-us">
+
+            <div class="part-1">
+                <h3>Who We Are</h3>
+
+                <p> Our PetShop is largest free online pet marketplace,
+                    relied upon by more than 5 million people monthly to rehome over 2,700 animals each day.
+                    PetShop prioritises responsible practices and works to ensure trust, safety, and convenience for buyers and sellers.</p>
+            </div>
+
+            <div class="part-2">
+                <h3>What We Do</h3>
+
+                <p>For those looking to buy a dog, cat, horse, rabbit, fish or bird , PetShop provides a safe environment in which to find their dream pet.
+                    PetShop connects a high volume of serious buyers with responsible breeders.
+                </p>
+            </div>
+
+        </div>
+
+    </article>
+</section>
+
+<section class="banner2"></section>
+
+<footer>
+    <div class="nav">
+        Contact us: 0440XXXXXXX
+    </div>
+    <div class="nav">
+        Contact us: email@mail.com
+    </div>
+    <div class="nav">
+        <ul class="social-icons">
+            <li class="fb">
+                <i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+            <li class="ig">
+                <i class="fa fa-instagram" aria-hidden="true"></i></li>
+            <li class="tw">
+                <i class="fa fa-twitter-square" aria-hidden="true"></i></li>
+        </ul>
+    </div>
+</footer>
+
+
+<!-- PopUp -->
+
+<div class="modal">
+
+    <div class="overlay"></div>
+
+    <div class="popup" id="login-wrapper" >
+        <div class="close-btn">&times;</div>
+        <h3>Login</h3>
+        <form id="login-form" class="pop-light-border">
+            <div class="form-element">
+                <span class="fa fa-user"></span>
+                <label>Username:</label>
+                <input class="light-border" type="email" name="email_address" placeholder="Email"/>
+            </div>
+            <div class="form-element">
+                <span class="fa fa-lock"></span>
+                <label>Password:</label>
+                <input class="light-border" type="password" name="password" placeholder="Password"/>
+            </div>
+            <div class="form-element">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <div class="form-element">
+                <button class="light-border light-btn" id="submit-btn" type="submit">Log In</button>
+            </div>
+            <div class="form-element">
+                <a href="register.html">Sign Up</a>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+<!----jscript home-link--------->
+<script src="js/serialize.js"></script>
+<script src="js/mobMenu.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

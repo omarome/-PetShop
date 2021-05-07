@@ -33,7 +33,6 @@
         </div>
         <div class="nav-right">
             <ul class="header-btns">
-                <li class="up-btn"><a href="#">Selling</a></li>
                 <li class="in-btn"><a href="register.html">Sign In</a></li>
             </ul>
 
@@ -50,33 +49,33 @@
             <div class="form-wrapper">
                 <form class="light-border" id="reg-user-form">
                     <h3>Registration Form</h3>
-                    <div class="fname">
+                    <div class="fname" id="firstname">
                         <label>First name:</label>
-                        <input class="light-border" type="name" name="firstname" placeholder="Enter your first name" pattern=".{3,}" required>
+                        <input class="light-border" type="text" name="firstname" placeholder="Enter your first name" pattern=".{3,}" required>
                     </div>
-                    <div class="lname">
+                    <div class="lname" id="lastname">
                         <label>Last name:</label>
-                        <input class="light-border" type="name" name="lastname" placeholder="Enter your last name" pattern=".{3,}" required>
+                        <input class="light-border" type="text" name="lastname" placeholder="Enter your last name" pattern=".{3,}" required>
                     </div>
-                    <div class="phn">
+                    <div class="phn" id="phone">
                         <label>Phone:</label>
-                        <input class="light-border" type="tel" name="phone" placeholder="Enter your phone">
+                        <input class="light-border" type="text" name="phone" placeholder="Enter your phone">
                     </div>
-                    <div class="adrs">
+                    <div class="adrs" id="address">
                         <label>Address:</label>
-                        <input class="light-border" type="email" name="username" placeholder="Enter your address" pattern=".{3,}" required>
+                        <input class="light-border" type="text" name="address" placeholder="Enter your address" pattern=".{3,}" required>
                     </div>
-                    <div class="mail">
+                    <div class="mail" id="mail">
                         <label>Email:</label>
                         <input class="light-border" type="email" name="username" placeholder="Enter your Email" pattern=".{3,}" required>
                     </div>
-                    <div class="psw">
+                    <div class="psw" id="password">
                         <label>Password:</label>
-                        <input class="light-border" type="password"  pattern="(?=.*[A-Z]).{8,}"
+                        <input class="light-border" type="password" name="password"  pattern="(?=.*[A-Z]).{8,}"
                                placeholder="Enter your password" required>
                     </div>
                     <div>
-                        <button class="light-border light-btn" type="submit">Sign Up</button>
+                        <button class="light-border light-btn" id ="reg-submit-btn" type="submit">Sign Up</button>
                     </div>
                 </form>
             </div>
@@ -102,7 +101,9 @@
         </ul>
     </div>
 </footer>
-
-<script src="js/home.js"></script>
+<!--<script src="js/register.js"></script> -->
+<script src="js/register.js"></script>
+<script src="js/serialize.js"></script>
+<script src="js/mobMenu.js"></script>
 </body>
 </html>

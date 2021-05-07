@@ -16,15 +16,21 @@
             <div class="logo-img"><img src="img/PetShopLogo.png"></div>
         </div>
         <div class="nav-left">
-            <ul class="main-nav">
+            <div class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="main-nav" id="navigation">
+
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
                     <a>Category</a>
-                    <ul class="dropdown-content">
-                        <li><a href="./.html">All</a></li>
-                        <li><a href="./.html">Cats</a></li>
-                        <li><a href="./.html">Dogs</a></li>
-                    </ul>
+                    <select class="dropdown-content" onChange="categoryFun(this);">
+                        <option value="" class="all-pets" id="all-pets" ><a href="">All</a></option>
+                        <option value="cat" class="cats" id="cat"><a href="">Cats</a></option>
+                        <option value="dog" class="dogs"  id="dog"><a href="">Dogs</a></option>
+                    </select>
                 </li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="about.html">Contact Us</a></li>
@@ -34,12 +40,18 @@
         </div>
         <div class="nav-right">
             <ul class="header-btns">
-                <li class="up-btn"><a href="#">Post an Ade</a></li>
-                <li class="in-btn" id="show-login"><a href="#">Log In</a></li>
+
+                <li class="up-btn" id="post-ade-btn"  ><a >Post an Ade</a></li>
+                <li class="in-btn" id="show-login"><a >Log In</a></li>
+                <li id="log-out" style="display: none;">
+                    <p id="user-info"> </p>
+                    <button class="light-border">Log out</button>
+                </li>
             </ul>
 
         </div>
         </div>
+
     </nav>
 
 </header>
@@ -51,9 +63,22 @@
                     <button type="submit"><i class="fa fa-search"></i></button>
                     <input type="text" placeholder="Search.." name="search">
                 </form>
-            </div
-            ></div>
-        <div class="grid-col1"><h1>Latest Posts</h1></div>
+            </div>
+            <div class="range">
+                <div class="field">
+                    <div class="value left">0</div>
+                    <input class="range_val"  type="range" min="0" max="10000" value="100" step="100" onChange="filterByPrice(this);">
+                    <div class="value right">
+                        <div class="sliderValue">
+                            <span class="first_stp">100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="grid-col1"></div>
     </article>
 </section>
 <footer>
@@ -83,10 +108,10 @@
 
     <div class="overlay"></div>
 
-    <div class="popup">
+    <div class="popup" id="login-wrapper" >
         <div class="close-btn">&times;</div>
+        <h3>Login</h3>
         <form id="login-form" class="pop-light-border">
-            <h3>Login</h3>
             <div class="form-element">
                 <span class="fa fa-user"></span>
                 <label>Username:</label>
@@ -102,7 +127,7 @@
                 <label for="remember-me">Remember me</label>
             </div>
             <div class="form-element">
-                <button class="light-border light-btn" type="submit">Log In</button>
+                <button class="light-border light-btn" id="submit-btn" type="submit">Log In</button>
             </div>
             <div class="form-element">
                 <a href="register.html">Sign Up</a>
@@ -112,8 +137,10 @@
 
 </div>
 
-<!----jscript home-link--------->
-<script src="js/home.js"></script>
 
+<!----jscript home-link--------->
+<script src="js/index.js"></script>
+<script src="js/serialize.js"></script>
+<script src="js/mobMenu.js"></script>
 </body>
 </html>

@@ -1,0 +1,167 @@
+.banner {
+    background-image: url("../img/banner2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 260px;
+}
+#change_password{
+    display: flex;
+    flex-direction: column;
+}
+.middle_page{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffb48f;
+    margin: 0 2.5%;
+    padding: 0 2%;
+    border-radius: 8px;
+}
+.profile_img{
+    padding: 50px;
+}
+
+.profile_img img{
+    width: 300px;
+}
+.profile_info{
+    width: 400px;
+    position: relative;
+
+}
+.change_password{
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    font-weight : bold ;
+}
+
+.change_password button{
+    width: 70px;
+    font-weight : bold ;
+}
+#password_two{
+    margin-bottom: 5px;
+}
+
+.prof-title {
+    display: inline-flex;
+    text-align: left;
+}
+
+.your-pets {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* PopUp  START*/
+.popup-modify {
+    position: fixed;
+    top: -80%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    padding: 20px 30px;
+    background-color: #a0cfd5;
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    transition: top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms;
+}
+
+.popup-modify.active {
+    top: 40%;
+    opacity: 1;
+    width: 400px;
+    transform: translate(-50%,-50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 20ms ease-in-out 0ms;
+}
+
+.pop-light-border {
+    border-radius: 8px;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+.popup-modify input, textarea {
+    display: inline-block;
+    width: 100%;
+    margin: .5em 0;
+    resize: none;
+    border: none;
+}
+
+.popup-modify .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 26px;
+    height: 26px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 24px;
+    font-size: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* The PopUp (background) */
+.overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-modify.active .overlay {
+    display: block;
+}
+
+.popup-modify form .form-element {
+    margin:15px 0px;
+}
+.popup-modify form .form-element label {
+    font-size:14px;
+    color:#222;
+}
+
+.popup-modify form #remember-me {
+    width: 5%;
+}
+
+.popup-modify form .form-element input[type="checkbox"] {
+    margin-right:5px;
+}
+
+.popup-modify form .light-btn {
+    width:100%;
+    height:50px;
+    margin-top: 10px;
+    border:none;
+    outline:none;
+    font-size:16px;
+    background-color: #afeeee;
+    color: black;
+    border-radius: 7px;
+    cursor:pointer;
+}
+
+.popup-modify form .form-element a {
+    display:block;
+    text-align:right;
+    font-size:15px;
+    color: #444545;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* PopUp  END */
