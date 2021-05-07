@@ -20,23 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="446ac757-9843-4c42-9ef0-615bb0fd3a4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public_html/js/addPetPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/js/mobMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/js/serialize.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/petpage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/pet-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/adpage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/petpage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/petpage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/petpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pet-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +88,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="498" y="258" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620387715150">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="498" y="258" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1620387715150" />
     <state x="1154" y="251" key="FileChooserDialogImpl" timestamp="1618928788401">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
