@@ -1,4 +1,6 @@
 'use strict';
+require('dotenv').config();
+const cors = require('cors');
 const express = require('express'); // import express from 'express';
 const app = express();
 const passport = require('./utils/pass');
@@ -8,6 +10,8 @@ const commentRoute= require('./routes/commentRoute');
 const adeViewsRoute= require('./routes/adeViewsRoute');
 const authRoute= require('./routes/authRoute');
 const port = process.env.HTTP_PORT || 3000;
+
+app.use(cors());
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 if (process.env.NODE_ENV === 'production') {
