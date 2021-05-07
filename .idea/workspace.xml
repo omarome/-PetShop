@@ -20,21 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="446ac757-9843-4c42-9ef0-615bb0fd3a4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public_html/js/addPetPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/js/mobMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/adpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/adpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/adPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/petPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/petPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/pet-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pet-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/authRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/commentRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/commentRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/petRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/petRoute.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +95,7 @@
       <workItem from="1620037780836" duration="42894000" />
       <workItem from="1620136765300" duration="20550000" />
       <workItem from="1620199048509" duration="57317000" />
-      <workItem from="1620309802520" duration="39155000" />
+      <workItem from="1620309802520" duration="40748000" />
     </task>
     <servers />
   </component>
