@@ -25,6 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));  // For parsing application/x-www-form-urlencoded
 app.use(express.static('public_html'))
 app.use(express.static('uploads'))
+app.use('/thumbnails', express.static('thumbnails'));
 
 // 2
 app.use('/auth', authRoute);
