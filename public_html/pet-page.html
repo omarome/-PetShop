@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Details Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pet-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header>
+    <!-- add header here -->
+    <nav class="nav">
+        <div class="logo-title">
+            <div class="page-title"><h3>PetShop</h3></div>
+            <div class="logo-img"><img src="img/PetShopLogo.png"></div>
+        </div>
+        <div class="nav-left">
+
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Contact Us</a></li>
+
+                <li></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul class="header-btns">
+                <li class="up-btn"><a href="#">Post an Ade</a></li>
+                <li class="in-btn" id="show-login"><a href="#">Log In</a></li>
+                <li id="log-out" style="display: none;">
+                    <p id="user-info"> </p>
+                    <button class="light-border">Log out</button>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+</header>
+<section>
+    <article id="ad">
+        <div id="card">
+
+            <div class="images-container">
+                <img src="" alt="cat" id="expandedImg" style="width:100%">
+            </div>
+
+        </div>
+
+    </article>
+    <article id="ade-details">
+        <div id="ade-content">
+            <h1 > Pet for sell</h1>
+            <div class="pet-details">
+                <h1 >Title: <span id="title"> </span></h1>
+                <h3 >Bread:<span id="breed"></span></h3>
+                <h3 >Price: <span id="price"></span></h3>
+                <h3 >The owner name:<span id="owner"></span></h3>
+                <h3 >Location:<span id="location"></span></h3>
+                <h3 >Viewed:<span id="viewed"></span></h3>
+                <br>
+                <h2 id="description-h">Description</h2>
+                <p  id="description">They’re floofy, they’re floppy and they’re oh-so sweet! It would be hard to find a person who would say that puppies are not super adorable, but in addition to cuteness, they’re also fascinating.</p>
+            </div>
+            <ul>
+                <li>
+                    <label for="name">Send a message to owner:</label>
+                    <input type="text" id="name" name="user_name" />
+                </li>
+            </ul>
+            <button id="submit-btn">Submit</button>
+            <div>
+                <ul class="conversations" id="conversations">
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <article class="comment-container">
+        <div class="all-comments" id="all-comments">
+            <!--- here comes list of comments -->
+        </div>
+        <br>
+        <h3 class="comment-container-h">Leave a comment</h3>
+        <br>
+        <div >
+            <form  enctype="multipart/form-data" id="comment-form">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                <label for="lname">Last Name</label>
+                <input  type="text" id="lname" name="lastname" placeholder="Your last name..">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Your email address..">
+
+                <label for="subject">Subject</label>
+                <textarea  id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                <label for="pet-id-form" name="pet_id" disabled="true"  ></label>
+                <input value ="" disabled="disabled" id="pet-id-form" >
+
+                <input type="submit" value="Submit" id="comm-submit-btn" >
+            </form>
+        </div>
+    </article>
+</section>
+
+<footer>
+    <div class="wrapper">
+        Contact us:
+        <div class="text_link">
+            <a href="https://gmail.com">email@mail.com</a>
+        </div>
+
+    </div>
+    <div class="wrapper">
+        <ul class="social-icons">
+            <li class="fb">
+                <a href="https://facebook.com">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+            </li>
+            <li class="ig">
+                <a href="https://instagram.com">
+                    <i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </li>
+            <li class="tw">
+                <a href="https://twitter.com">
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+
+
+
+<!-- PopUp -->
+
+<div class="modal">
+
+    <div class="overlay"></div>
+
+    <div class="popup" id="login-wrapper" >
+        <div class="close-btn">&times;</div>
+        <h3>Login</h3>
+        <form id="login-form" class="pop-light-border">
+            <div class="form-element">
+                <span class="fa fa-user"></span>
+                <label>Username:</label>
+                <input class="light-border" type="email" name="username" placeholder="Email"/>
+            </div>
+            <div class="form-element">
+                <span class="fa fa-lock"></span>
+                <label>Password:</label>
+                <input class="light-border" type="password" name="password" placeholder="Password"/>
+            </div>
+            <div class="form-element">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <div class="form-element">
+                <button class="light-border light-btn" id="login-submit-btn" type="submit">Log In</button>
+            </div>
+            <div class="form-element">
+                <a href="register.html">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!----jscript home-link--------->
+<!--<script src="js/index.js"></script> -->
+<script src="js/serialize.js"></script>
+<script src="js/petPage.js"></script>
+<script src="js/mobMenu.js"></script>
+
+</body>
+</html>

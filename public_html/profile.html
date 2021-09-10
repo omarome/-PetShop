@@ -2,10 +2,135 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Profile Page</title>
+    <title>Home Page</title>
+
+    <link rel="stylesheet" href="css/home-logged-in.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
+<header>
+    <!-- add header here -->
+    <nav class="nav">
+        <div class="logo-title">
+            <div class="page-title"><h3>PetShop</h3></div>
+            <div class="logo-img"><img src="img/PetShopLogo.png"></div>
+        </div>
+        <div class="nav-left">
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a>Category</a>
+                    <ul class="dropdown-content">
+                        <li><a href="./.html">All</a></li>
+                        <li><a href="./.html">Cats</a></li>
+                        <li><a href="./.html">Dogs</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Contact Us</a></li>
+
+                <li></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul class="header-btns">
+                <li class="dropdown">
+                    <a>👤</a>
+                    <ul class="dropdown-content" id="dropdown-content2">
+                        <li class="dropdown_item"><a class="dropdown_link" href="./profile.html">Profile</a></li>
+                        <li class="dropdown_item"><a class="dropdown_link" href="./adpage.html">Post an ad</a></li>
+                        <li class="dropdown_item"><a class="dropdown_link" href="./index.html">Log out</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+</header>
+<section class="banner"></section>
+
+<section class="middle_page">
+
+    <div class="profile_img">
+        <h1>Your profile</h1>
+    </div>
+
+    <div class="profile_info">
+    </div>
+
+    <form class="light-border" id="change_password">
+        Old password:
+        <input class="light-border" type="password" name="password" pattern="(?=.*[A-Z]).{8,}"
+               placeholder="Password" required>
+        New password:
+        <input id="password" class="light-border" name="password" type="password" pattern="(?=.*[A-Z]).{8,}" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" required>
+        New password again:
+        <input id="password_two" class="light-border" name="password_two" type="password" pattern="(?=.*[A-Z]).{8,}" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify Password" required>
+        <button class="light-border" type="submit">Save</button>
+    </form>
+
+</section>
+<section>
+    <div class="grid-col1"><h1>Your adds</h1></div>
+</section>
+
+<footer>
+    <div class="nav">
+        Contact us: 0440XXXXXXX
+    </div>
+    <div class="nav">
+        Contact us: email@mail.com
+
+    </div>
+    <div class="nav">
+        <ul class="social-icons">
+            <li class="fb">
+                <i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+            <li class="ig">
+                <i class="fa fa-instagram" aria-hidden="true"></i></li>
+            <li class="tw">
+                <i class="fa fa-twitter-square" aria-hidden="true"></i></li>
+        </ul>
+    </div>
+</footer>
+<!-- PopUp -->
+
+<div class="modal">
+
+    <div class="overlay"></div>
+
+    <div class="popup">
+        <div class="close-btn">&times;</div>
+
+        <div class="form-wrapper">
+            <h3>Modify cat</h3>
+            <form id="mod-cat-form" class="light-border">
+                <input class="light-border" type="text" name="name" placeholder="Name" required>
+                <input class="light-border" type="number" name="age" placeholder="Age" required>
+                <input class="light-border" type="number" step="0.1" name="weight" placeholder="Weight" required>
+                <select class="light-border add-owner" name="owner" required>
+                    <option value="">Select owner</option>
+                </select>
+                <input type="hidden" name="id">
+                <button class="light-border" type="submit">Save changes</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<!----jscript home-link--------->
+<script src="js/serialize.js"></script>
 <script src="js/profile.js"></script>
+<script src="js/mobMenu.js"></script>
+
 </body>
 </html>
